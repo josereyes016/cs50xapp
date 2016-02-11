@@ -7,7 +7,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
         // else render form
-        render("register_form.php", ["title" => "Register"]);
+        rend("../templates/register_form.php", ["title" => "Register"]);
     }
 
     // else if user reached page via POST (as by submitting a form via POST)

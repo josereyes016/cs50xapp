@@ -10,7 +10,7 @@
      */
 
     // your database's name
-    define("DATABASE", "final");
+    define("DATABASE", "cs50xapp");
 
     // your database's password
     define("PASSWORD", "root");

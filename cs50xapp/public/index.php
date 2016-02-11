@@ -1,10 +1,8 @@
 <?php
 
     // configuration
-    require("../includes/config.php");
-
-    render("../templates/header.php");
-    render("../templates/home.php");
-    render("../templates/footer.php")
+    //require("../includes/config.php");
+	require("../includes/functions.php");
+    render("../templates/home.php", [$title = "Home"]);
 	
 ?>
