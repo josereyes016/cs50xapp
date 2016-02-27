@@ -161,7 +161,7 @@
 			<div class="cls-content-lg panel">
 				<div class="panel-body">
 					<p class="pad-btm">Create an account</p>
-					<form action="pages-login.html">
+					<form action="signup.php">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-male"></i></div>
