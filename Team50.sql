@@ -28,8 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `users` (
   `userID` int(30) unsigned NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `emailParent` varchar(30) DEFAULT NULL,
   `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
@@ -37,8 +38,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userID`, `email`, `emailParent`, `password`) VALUES
-(1, 'mynameisdylantackoor@gmail.com', NULL, 'crimson');
+INSERT INTO `users` (`userID`,`fname`, `lname`, `email`, `password`) VALUES
+(1, 'Dylan', 'Tackoor', 'mynameisdylantackoor@gmail.com', 'crimson');
 
 --
 -- Indexes for dumped tables
