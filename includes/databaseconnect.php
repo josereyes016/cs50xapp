@@ -11,7 +11,7 @@
   if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
   }
-
-  // Storing Session
-  session_start();
+  // 
+  // // Storing Session
+  // session_start();
 ?>

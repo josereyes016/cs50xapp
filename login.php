@@ -50,7 +50,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page | Nifty - Responsive admin template.</title>
+    <title>App50 | Log In</title>
 
 
     <!--STYLESHEET-->
@@ -127,9 +127,9 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 		<!--===================================================-->
 		<div class="cls-header cls-header-lg">
 			<div class="cls-brand">
-				<a class="box-inline" href="index.html">
+				<a class="box-inline" href="index.php">
 					<!-- <img alt="Nifty Admin" src="img/logo.png" class="brand-icon"> -->
-					<span class="brand-title">Nifty <span class="text-thin">Admin</span></span>
+					<span class="brand-title">CS50x<span class="text-thin">Miami</span></span>
 				</a>
 			</div>
 		</div>
@@ -142,11 +142,11 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
 					<p class="pad-btm">Sign In to your account</p>
-					<form action="index.html">
+					<form action="login.php">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								<input type="text" class="form-control" placeholder="Username">
+								<input type="text" class="form-control" placeholder="E-mail">
 							</div>
 						</div>
 						<div class="form-group">
@@ -156,13 +156,13 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8 text-left checkbox">
+							<!-- <div class="col-xs-8 text-left checkbox">
 								<label class="form-checkbox form-icon">
 								<input type="checkbox"> Remember me
 								</label>
-							</div>
-							<div class="col-xs-4">
-								<div class="form-group text-right">
+							</div> -->
+							<div class="col-xs-12">
+								<div class="form-group text-center">
 								<button class="btn btn-success text-uppercase" type="submit">Sign In</button>
 								</div>
 							</div>
@@ -177,24 +177,6 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 			<div class="pad-ver">
 				<a href="pages-password-reminder.html" class="btn-link mar-rgt">Forgot password ?</a>
 				<a href="pages-register.html" class="btn-link mar-lft">Create a new account</a>
-			</div>
-		</div>
-		<!--===================================================-->
-
-
-		<!-- DEMO PURPOSE ONLY -->
-		<!--===================================================-->
-		<div class="demo-bg">
-			<div id="demo-bg-list">
-				<div class="demo-loading"><i class="fa fa-refresh"></i></div>
-				<img class="demo-chg-bg bg-trans" src="img/bg-img/thumbs/bg-trns.jpg" alt="Background Image">
-				<img class="demo-chg-bg" src="img/bg-img/thumbs/bg-img-1.jpg" alt="Background Image">
-				<img class="demo-chg-bg active" src="img/bg-img/thumbs/bg-img-2.jpg" alt="Background Image">
-				<img class="demo-chg-bg" src="img/bg-img/thumbs/bg-img-3.jpg" alt="Background Image">
-				<img class="demo-chg-bg" src="img/bg-img/thumbs/bg-img-4.jpg" alt="Background Image">
-				<img class="demo-chg-bg" src="img/bg-img/thumbs/bg-img-5.jpg" alt="Background Image">
-				<img class="demo-chg-bg" src="img/bg-img/thumbs/bg-img-6.jpg" alt="Background Image">
-				<img class="demo-chg-bg" src="img/bg-img/thumbs/bg-img-7.jpg" alt="Background Image">
 			</div>
 		</div>
 		<!--===================================================-->
