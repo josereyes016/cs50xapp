@@ -170,16 +170,16 @@
 								</div>
 								<div class="form-group">
 									<div class="input-group">
-										<div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-										<input type="text" class="form-control" placeholder="E-mail" name="email">
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-user"></i></div>
 										<input type="text" class="form-control" placeholder="Last name" name="lname">
 									</div>
 								</div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                    <input type="text" class="form-control" placeholder="E-mail" name="email">
+                  </div>
+                </div>
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
