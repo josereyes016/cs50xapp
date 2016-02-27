@@ -148,7 +148,7 @@
 		<!--===================================================-->
 		<div class="cls-header cls-header-lg">
 			<div class="cls-brand">
-				<a class="box-inline" href="index.html">
+				<a class="box-inline" href="index.php">
 					<!-- <img alt="Nifty Admin" src="img/logo.png" class="brand-icon"> -->
 					<span class="brand-title">CS50xMiami<span class="text-thin">App50</span></span>
 				</a>
