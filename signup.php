@@ -150,7 +150,7 @@
 			<div class="cls-brand">
 				<a class="box-inline" href="index.php">
 					<!-- <img alt="Nifty Admin" src="img/logo.png" class="brand-icon"> -->
-					<span class="brand-title">CS50xMiami<span class="text-thin">App50</span></span>
+					<span class="brand-title">CS50x<span class="text-thin">Miami</span></span>
 				</a>
 			</div>
 		</div>
@@ -158,7 +158,7 @@
 		<!-- REGISTRATION FORM -->
 		<!--===================================================-->
 		<div class="cls-content">
-			<div class="cls-content-lg panel">
+			<div class="cls-content-sm panel">
 				<div class="panel-body">
 					<p class="pad-btm">Create an account</p>
 					<form action="signup.php">
@@ -192,13 +192,13 @@
                     <input type="password" class="form-control" placeholder="Confirm password" name="password2">
                   </div>
                 </div>
-							<div class="col-xs-8 text-left checkbox">
-								<!-- <label class="form-checkbox form-icon">
+							<!-- <div class="col-xs-8 text-left checkbox">
+								<label class="form-checkbox form-icon">
 									<input type="checkbox"> I agree with the <a href="#" class="btn-link">Terms and Conditions</a>
-								</label> -->
-							</div>
-							<div class="col-xs-4">
-								<div class="form-group text-right">
+								</label>
+							</div> -->
+							<div class="col-xs-12">
+								<div class="form-group text-center">
 									<button class="btn btn-success text-uppercase" type="submit">Sign Up</button>
 								</div>
 							</div>

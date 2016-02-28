@@ -2,7 +2,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "Team50";
+  $dbname = "cs50xapp";
 
   // Create connection
   $db = mysqli_connect($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@
   if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
   }
-  // 
+  //
   // // Storing Session
   // session_start();
 ?>

@@ -13,7 +13,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   $isWorking = True;
 
   // Check form filled
-  if (empty($_POST['email']) && empty($_POST['password'])) {
+  if (empty($_POST['email']) || empty($_POST['password'])) {
     $formError = "Please fill out form.";
     $isWorking = False;
   }
@@ -146,13 +146,13 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								<input type="text" class="form-control" placeholder="E-mail">
+								<input type="email" class="form-control" name="email" placeholder="E-mail">
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-								<input type="password" class="form-control" placeholder="Password">
+								<input type="password" class="form-control" name="password" placeholder="Password">
 							</div>
 						</div>
 						<div class="row">
@@ -163,7 +163,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 							</div> -->
 							<div class="col-xs-12">
 								<div class="form-group text-center">
-								<button class="btn btn-success text-uppercase" type="submit">Sign In</button>
+								<button class="btn btn-success text-uppercase" type="submit" name="submit" value="submit">Log In</button>
 								</div>
 							</div>
 						</div>
@@ -175,8 +175,8 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 				</div>
 			</div>
 			<div class="pad-ver">
-				<a href="pages-password-reminder.html" class="btn-link mar-rgt">Forgot password ?</a>
-				<a href="pages-register.html" class="btn-link mar-lft">Create a new account</a>
+				<a href="password-reminder.php" class="btn-link mar-rgt">Forgot password ?</a>
+				<a href="signup.php" class="btn-link mar-lft">Create a new account</a>
 			</div>
 		</div>
 		<!--===================================================-->
