@@ -34,6 +34,8 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
     if ($rows == 1) {
       $userInfo = mysqli_fetch_assoc($query);
       $_SESSION['email'] = $userInfo["email"];
+      $_SESSION['fname'] = $userInfo["fname"];
+      $_SESSION['lname'] = $userInfo["lname"];
       header("location: index.php"); // Redirect to homepage
     }
     else { // If account not found
