@@ -156,6 +156,9 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 							</div>
 						</div>
 						<div class="row">
+              <div id="error">
+                <p><?= $formError ?></p>
+              </div>
 							<!-- <div class="col-xs-8 text-left checkbox">
 								<label class="form-checkbox form-icon">
 								<input type="checkbox"> Remember me

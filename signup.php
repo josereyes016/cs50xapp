@@ -192,6 +192,9 @@
                     <input type="password" class="form-control" placeholder="Confirm password" name="password2">
                   </div>
                 </div>
+                <div id="error">
+                  <p><?= $formError ?></p>
+                </div>
 							<!-- <div class="col-xs-8 text-left checkbox">
 								<label class="form-checkbox form-icon">
 									<input type="checkbox"> I agree with the <a href="#" class="btn-link">Terms and Conditions</a>
