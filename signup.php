@@ -161,7 +161,7 @@
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
 					<p class="pad-btm">Create an account</p>
-					<form action="signup.php">
+					<form action="signup.php" method="post">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-male"></i></div>

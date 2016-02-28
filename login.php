@@ -142,7 +142,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
 					<p class="pad-btm">Sign In to your account</p>
-					<form action="login.php">
+					<form action="login.php" method="post">
 						<div class="form-group">
 							<div class="input-group">
 								<div class="input-group-addon"><i class="fa fa-user"></i></div>
