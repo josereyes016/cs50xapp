@@ -6,6 +6,7 @@
   $lname = "";
   $email = "";
   $password = "";
+  $password2 = "";
   $formError = "";
 
   // if form submitted
@@ -20,11 +21,11 @@
 
     $isWorking = True;
 
-    // // if entries are NOT filled
-    if (empty($_POST['fname'])|| $_POST['lname'] || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2'])) {
-      $formError = "Please fill out all required fields.";
-      $isWorking = False;
-    }
+    // TODO if entries are NOT filled
+    // if (empty($_POST['fname'])|| $_POST['lname'] || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2'])) {
+    //   $formError = "Please fill out all required fields.";
+    //   $isWorking = False;
+    // }
 
     // if names aren't alphanumeric
     // if(!preg_match("/^[a-zA-Z]$/", $_POST['Fname']) &&
@@ -57,11 +58,12 @@
 
     // Saves info to users database
     if ($isWorking) {
-      mysqli_query($db, "INSERT INTO `users` (`email`, `name`, `password`)
-                              VALUES ('$email_cleaned', '$name_cleaned', '$password_cleaned')");
-      header("location: registersucces.php");
+      mysqli_query($db, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`)
+                              VALUES ('$fname_cleaned', '$lname_cleaned', '$email_cleaned', '$password_cleaned')");
+      header("location: index.php");
     }
   }
+  echo $formError;
 ?>
 
 
@@ -161,7 +163,7 @@
 			<div class="cls-content-sm panel">
 				<div class="panel-body">
 					<p class="pad-btm">Create an account</p>
-					<form action="signup.php" method="post">
+					<form action="register.php" method="post">
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-male"></i></div>
@@ -192,9 +194,9 @@
                     <input type="password" class="form-control" placeholder="Confirm password" name="password2">
                   </div>
                 </div>
-                <div id="error">
-                  <p><?= $formError ?></p>
-                </div>
+                <!-- <div id="error">
+                  <p></p>
+                </div> -->
 							<!-- <div class="col-xs-8 text-left checkbox">
 								<label class="form-checkbox form-icon">
 									<input type="checkbox"> I agree with the <a href="#" class="btn-link">Terms and Conditions</a>
@@ -202,7 +204,7 @@
 							</div> -->
 							<div class="col-xs-12">
 								<div class="form-group text-center">
-									<button class="btn btn-success text-uppercase" type="submit">Sign Up</button>
+									<button class="btn btn-success text-uppercase" type="submit" name="submit" value="submit">Sign Up</button>
 								</div>
 							</div>
 

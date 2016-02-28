@@ -178,7 +178,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 			</div>
 			<div class="pad-ver">
 				<a href="password-reminder.php" class="btn-link mar-rgt">Forgot password ?</a>
-				<a href="signup.php" class="btn-link mar-lft">Create a new account</a>
+				<a href="register.php" class="btn-link mar-lft">Create a new account</a>
 			</div>
 		</div>
 		<!--===================================================-->
