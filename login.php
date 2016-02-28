@@ -33,7 +33,6 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
     $rows = mysqli_num_rows($query);
     if ($rows == 1) {
       $userInfo = mysqli_fetch_assoc($query);
-      session_start();
       $_SESSION['email'] = $userInfo["email"];
       header("location: index.php"); // Redirect to homepage
     }

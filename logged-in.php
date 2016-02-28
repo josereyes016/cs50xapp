@@ -183,7 +183,7 @@
 
 								<!-- Dropdown footer -->
 								<div class="pad-all text-right">
-									<a href="pages-login.html" class="btn btn-primary">
+									<a href="log-out.php" class="btn btn-primary">
 										<i class="fa fa-sign-out fa-fw"></i> Logout
 									</a>
 								</div>
