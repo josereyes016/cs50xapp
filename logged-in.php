@@ -133,7 +133,7 @@
 								<span class="pull-right">
 									<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
 								</span>
-								<div class="username hidden-xs"><?= $_SESSION['fname'] ?></div>
+								<div class="username hidden-xs"><?= $_SESSION['fname'] . " " . $_SESSION['lname'] ?></div>
 							</a>
 
 
