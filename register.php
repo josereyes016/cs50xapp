@@ -22,10 +22,10 @@
     $isWorking = True;
 
     // TODO if entries are NOT filled
-    // if (empty($_POST['fname'])|| $_POST['lname'] || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2'])) {
-    //   $formError = "Please fill out all required fields.";
-    //   $isWorking = False;
-    // }
+    if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2'])) {
+      $formError = "Please fill out all required fields.";
+      $isWorking = False;
+    }
 
     // if names aren't alphanumeric
     // if(!preg_match("/^[a-zA-Z]$/", $_POST['Fname']) &&
