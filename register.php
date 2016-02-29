@@ -13,8 +13,8 @@
   if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 
     // TODO Clean variables for SQL queries && fix capitalization
-    $fname_cleaned = $_POST['fname'];
-    $lname_cleaned = $_POST['lname'];
+    $fname_cleaned = ucfirst(strtolower($_POST['fname']));
+    $lname_cleaned = ucfirst(strtolower($_POST['lname']));
     $email_cleaned = $_POST['email'];
     $password_cleaned = $_POST['password'];
     $password2_cleaned = $_POST['password2'];
