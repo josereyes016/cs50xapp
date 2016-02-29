@@ -58,5 +58,11 @@
     <script src="plugins/pace/pace.min.js"></script>
 
 
+    <!-- FullCalendar -->
+    <link href="css/fullcalendar.css" rel="stylesheet">
+    <script type="text/javascript" src="js/fullcalendar.js"></script>
+    <script type="text/javascript" src="js/gcal.js"></script>
+
+
 
 </head>

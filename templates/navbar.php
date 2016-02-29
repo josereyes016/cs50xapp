@@ -56,12 +56,10 @@
 
 
 							<div class="dropdown-menu dropdown-menu-sm dropdown-menu-right with-arrow panel-default">
-
-
 								<!-- User dropdown menu -->
 								<ul class="head-list">
 									<li>
-										<a href="#">
+										<a href="profile.php">
 											<i class="fa fa-user fa-fw fa-lg"></i> Profile
 										</a>
 									</li>
@@ -82,7 +80,6 @@
 										</a>
 									</li>
 								</ul>
-
 								<!-- Dropdown footer -->
 								<div class="pad-all text-center">
 									<a href="log-out.php" class="btn btn-primary">
