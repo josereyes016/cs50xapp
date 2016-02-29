@@ -9,7 +9,7 @@ $title = 'Dashboard';
 // Render templates
 require('templates/head.php');
 require('templates/navbar.php');
-require('templates/dashboard-page.php'); // Content container template
+require('templates/calendar-page.php'); // Content container template
 require('templates/navigation.php');
 require('templates/footer.php');
 ?>
