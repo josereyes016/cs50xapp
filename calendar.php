@@ -1,10 +1,10 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
+if (!(session_status() == PHP_SESSION_ACTIVE)) {
   header("location: index.php"); // Redirect to homepage
 }
 
 // Set dynamic page title
-$title = 'Dashboard';
+$title = 'Calendar';
 
 // Render templates
 require('templates/head.php');
