@@ -3,6 +3,8 @@
   if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 
   }
+
+  $title = 'Password Reminder';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +13,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App50 | Forgot Password</title>
+    <title>
+      <?php
+        if(isset($title)){
+          echo $title . " | App50";
+        }
+        else {
+          echo "App50";
+        }
+      ?>
+    </title>
+
+    <!-- MAKE MOBILE FRIENDLY -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <meta name="theme-color" content="#26a69a">
+    <link rel="apple-touch-icon" href="img/CS50xMiami_Logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#26a69a">
 
 
     <!--STYLESHEET-->
@@ -85,7 +103,7 @@
 		<!--===================================================-->
 		<div class="cls-header cls-header-lg">
 			<div class="cls-brand">
-				<a class="box-inline" href="index.html">
+				<a class="box-inline" href="index.php">
 					<!-- <img alt="Nifty Admin" src="img/logo.png" class="brand-icon"> -->
 					<span class="brand-title">CS50x<span class="text-thin">Miami</span></span>
 				</a>

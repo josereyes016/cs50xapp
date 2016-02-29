@@ -35,10 +35,10 @@
     // }
 
     // if email is NOT valid
-    if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $_POST['email']) && $isWorking) {
-      $formError = "Please enter valid email address.";
-      $isWorking = False;
-    }
+    // if (!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$", $_POST['email']) && $isWorking) {
+    //   $formError = "Please enter valid email address.";
+    //   $isWorking = False;
+    // }
 
     // If passwords mismatch
     if ($_POST['password'] != $_POST['password2'] && $isWorking) {
@@ -64,6 +64,8 @@
     }
   }
   echo $formError;
+
+  $title = 'Register'
 ?>
 
 
@@ -73,7 +75,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App50 | Register</title>
+    <title>
+      <?php
+        if(isset($title)){
+          echo $title . " | App50";
+        }
+        else {
+          echo "App50";
+        }
+      ?>
+    </title>
+
+    <!-- MAKE MOBILE FRIENDLY -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <meta name="theme-color" content="#26a69a">
+    <link rel="apple-touch-icon" href="img/CS50xMiami_Logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#26a69a">
 
 
     <!--STYLESHEET-->

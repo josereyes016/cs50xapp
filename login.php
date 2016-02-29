@@ -43,6 +43,8 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
     }
   }
 }
+
+$title = 'Log In';
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +53,23 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App50 | Log In</title>
+    <title>
+      <?php
+        if(isset($title)){
+          echo $title . " | App50";
+        }
+        else {
+          echo "App50";
+        }
+      ?>
+    </title>
+
+    <!-- MAKE MOBILE FRIENDLY -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <meta name="theme-color" content="#26a69a">
+    <link rel="apple-touch-icon" href="img/CS50xMiami_Logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#26a69a">
 
 
     <!--STYLESHEET-->
