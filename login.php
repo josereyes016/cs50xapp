@@ -35,8 +35,6 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
     $rows = mysqli_num_rows($query);
     if ($rows == 1) {
       $userInfo = mysqli_fetch_assoc($query);
-      session_start();
-      $_SESSION['id'] = $userInfo['userID'];
       $_SESSION['email'] = $userInfo["email"];
       $_SESSION['fname'] = $userInfo["fname"];
       $_SESSION['lname'] = $userInfo["lname"];

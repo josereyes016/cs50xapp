@@ -43,7 +43,11 @@
     <!--Bootstrap Select [ OPTIONAL ]-->
     <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
 
+    <!-- Custom theme -->
+    <link href="css/themes/type-c/theme-cs50.css" rel="stylesheet">
 
+    <!-- Calendar CSS for responsive iFrame -->
+    <link href="css/calendar.css" rel="stylesheet">
 
 
     <!--SCRIPT-->

@@ -1,8 +1,3 @@
-
-
-<!--TIPS-->
-<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-
 <body>
 	<div id="container" class="effect mainnav-lg">
 
@@ -50,7 +45,13 @@
 								<span class="pull-right">
 									<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
 								</span>
-								<div class="username"><?= $_SESSION['fname'] . " " . $_SESSION['lname'] ?></div>
+								<div class="username">
+									<?php
+										if (isset($_SESSION['fname']) && isset($_SESSION['lname'])) {
+											echo $_SESSION['fname'] . " " . $_SESSION['lname'];
+										}
+									?>
+								</div>
 							</a>
 
 

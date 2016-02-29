@@ -79,7 +79,7 @@
             <!--Menu list item-->
             <li>
               <a href="calendar.php">
-                <i class="fa fa-flask"></i>
+                <i class="fa fa-table"></i>
                 <span class="menu-title">
                   <strong>Calendar</strong>
                   <!-- <span class="pull-right badge badge-warning">9</span> -->
