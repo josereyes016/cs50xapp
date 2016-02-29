@@ -13,9 +13,9 @@
   if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 
     // TODO Clean variables for SQL queries && fix capitalization
-    $fname_cleaned = $_POST['fname'];
-    $lname_cleaned = $_POST['lname'];
-    $email_cleaned = $_POST['email'];
+    $fname_cleaned = ucfirst(strtolower(trim($_POST['fname']))); // Strips white space, forces capitalization
+    $lname_cleaned = ucfirst(strtolower(trim($_POST['lname'])));
+    $email_cleaned = trim($_POST['email']); // Strips white space
     $password_cleaned = $_POST['password'];
     $password2_cleaned = $_POST['password2'];
 
@@ -56,10 +56,20 @@
       $isWorking = False;
     }
 
+    $cryptpw = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
     // Saves info to users database
     if ($isWorking) {
       mysqli_query($db, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`)
-                              VALUES ('$fname_cleaned', '$lname_cleaned', '$email_cleaned', '$password_cleaned')");
+                              VALUES ('$fname_cleaned', '$lname_cleaned', '$email_cleaned', '$cryptpw')");
+      $query = mysqli_query($db, "SELECT *
+                                    FROM `users`
+                                   WHERE `email` = '$email_cleaned'");
+      $userInfo = mysqli_fetch_assoc($query);
+      $_SESSION['id'] = $userInfo['id'];
+      $_SESSION['email'] = $userInfo["email"];
+      $_SESSION['fname'] = $userInfo["fname"];
+      $_SESSION['lname'] = $userInfo["lname"];
       header("location: index.php");
     }
   }

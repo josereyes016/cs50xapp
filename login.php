@@ -26,19 +26,22 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   //   $isWorking = False;
   // }
 
+
   // Check if account found & store user info
   if ($isWorking) {
     $query = mysqli_query($db, "SELECT *
                                   FROM `users`
-                                 WHERE `email` = '$email_cleaned'
-                                   AND `password` = '$password_cleaned'");
+                                 WHERE `email` = '$email_cleaned'");
     $rows = mysqli_num_rows($query);
     if ($rows == 1) {
       $userInfo = mysqli_fetch_assoc($query);
-      $_SESSION['email'] = $userInfo["email"];
-      $_SESSION['fname'] = $userInfo["fname"];
-      $_SESSION['lname'] = $userInfo["lname"];
-      header("location: index.php"); // Redirect to homepage
+      if (password_verify($password_cleaned, $userInfo["password"])){
+        $_SESSION['id'] = $userInfo['id'];
+        $_SESSION['email'] = $userInfo["email"];
+        $_SESSION['fname'] = $userInfo["fname"];
+        $_SESSION['lname'] = $userInfo["lname"];
+        header("location: index.php"); // Redirect to homepage
+      }
     }
     else { // If account not found
       $formError = "Email & password combination not found";
