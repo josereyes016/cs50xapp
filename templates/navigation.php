@@ -78,17 +78,6 @@
 
             <!--Menu list item-->
             <li>
-              <a href="calendar.php">
-                <i class="fa fa-table"></i>
-                <span class="menu-title">
-                  <strong>Calendar</strong>
-                  <!-- <span class="pull-right badge badge-warning">9</span> -->
-                </span>
-              </a>
-            </li>
-
-            <!--Menu list item-->
-            <li>
               <a href="attendance.php">
                 <i class="fa fa-flask"></i>
                 <span class="menu-title">
@@ -109,13 +98,15 @@
 
             <!--Menu list item-->
             <li>
-              <a href="slack.php">
-                <i class="fa fa-flask"></i>
+              <a href="calendar.php">
+                <i class="fa fa-table"></i>
                 <span class="menu-title">
-                  <strong>Slack</strong>
+                  <strong>Calendar</strong>
+                  <!-- <span class="pull-right badge badge-warning">9</span> -->
                 </span>
               </a>
             </li>
+
 
 
         </div>

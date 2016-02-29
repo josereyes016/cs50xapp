@@ -28,6 +28,52 @@
     <div id="page-content">
 
 
+      <div class="col-md-4 col-xs-12">
+        <div class="panel panel-default">
+        <!-- Panel heading -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          <div class="panel-heading">
+            <h3 class="panel-title">Attendance</h3>
+          </div>
+          <!-- Panel body -->
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          <div class="panel-body">
+              <!-- Content here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xs-12">
+        <div class="panel panel-default">
+        <!-- Panel heading -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          <div class="panel-heading">
+            <h3 class="panel-title">Attendance</h3>
+          </div>
+          <!-- Panel body -->
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          <div class="panel-body">
+              <!-- Content here -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xs-12">
+        <div class="panel panel-default">
+        <!-- Panel heading -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          <div class="panel-heading">
+            <h3 class="panel-title">Attendance</h3>
+          </div>
+          <!-- Panel body -->
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+          <div class="panel-body">
+              <!-- Content here -->
+          </div>
+        </div>
+      </div>
+
+
 
     </div>
     <!--===================================================-->
