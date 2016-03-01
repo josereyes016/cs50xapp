@@ -1,7 +1,5 @@
 <?php
-// if (!(session_status() == PHP_SESSION_ACTIVE)) {
-//   header("location: index.php"); // Redirect to homepage
-// }
+
 require('includes/databaseconnect.php');
 
 if($_SESSION['id'] == ''){
@@ -9,12 +7,22 @@ if($_SESSION['id'] == ''){
 }
 
 // Set dynamic page title
-$title = 'Calendar';
+$title = 'Profile Edit';
 
 // Render templates
 require('templates/head.php');
 require('templates/navbar.php');
-require('templates/calendar-page.php'); // Content container template
+if ($_SERVER["REQUEST_METHOD"] == "GET")
+{
+    // else render form
+    require('templates/editprofile-form.php'); // Content container template
+}
+elseif ($_SERVER["REQUEST_METHOD" == "POST"]) {
+  // Check for changes
+  // Update database
+  // Redirect to Profile.php
+}
 require('templates/navigation.php');
 require('templates/footer.php');
+
 ?>

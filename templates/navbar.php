@@ -70,7 +70,7 @@
 										</a>
 									</li> -->
 									<li>
-										<a href="#">
+										<a href="settings.php">
 											<i class="fa fa-gear fa-fw fa-lg"></i> Settings
 										</a>
 									</li>
