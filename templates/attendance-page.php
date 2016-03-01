@@ -25,7 +25,7 @@
   QRcode::png($textForDisplay, $filePath, QR_ECLEVEL_H, $size, $padding);
 ?>
 <div class="boxed">
-  
+
   <!--CONTENT CONTAINER-->
   <!--===================================================-->
   <div id="content-container">
@@ -52,7 +52,7 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <h3>Here's the code!</h3>
+      <h3>Scan this code at the front to be marked as present.</h3>
       <img src="<?= $filePath ?>">
     </div>
     <!--===================================================-->
