@@ -14,8 +14,11 @@ require('templates/head.php');
 require('templates/navbar.php');
 if ($_SERVER["REQUEST_METHOD"] == "GET")
 {
-    // else render form
-    require('templates/editprofile-form.php'); // Content container template
+  // Query profile table for user info
+  
+
+  // Render form with default values from db
+  require('templates/editprofile-form.php'); // Content container template
 }
 elseif ($_SERVER["REQUEST_METHOD" == "POST"]) {
   // Check for changes
