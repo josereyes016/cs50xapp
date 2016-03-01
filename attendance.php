@@ -12,6 +12,7 @@ if($_SESSION['id'] == ''){
 $title = 'Attendance';
 
 // Render templates
+require ("includes/databaseconnect.php");
 require('templates/head.php');
 require('templates/navbar.php');
 require('templates/attendance-page.php'); // Content container template
