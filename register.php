@@ -60,8 +60,8 @@
 
     // Saves info to users database
     if ($isWorking) {
-      mysqli_query($db, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`)
-                              VALUES ('$fname_cleaned', '$lname_cleaned', '$email_cleaned', '$cryptpw')");
+      mysqli_query($db, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`, `is_admin`)
+                              VALUES ('$fname_cleaned', '$lname_cleaned', '$email_cleaned', '$cryptpw', 0)");
       $query = mysqli_query($db, "SELECT *
                                     FROM `users`
                                    WHERE `email` = '$email_cleaned'");
@@ -70,6 +70,7 @@
       $_SESSION['email'] = $userInfo["email"];
       $_SESSION['fname'] = $userInfo["fname"];
       $_SESSION['lname'] = $userInfo["lname"];
+      $_SESSION['is_admin'] = $userInfo['is_admin'];
       header("location: index.php");
     }
   }

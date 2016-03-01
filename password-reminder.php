@@ -1,7 +1,12 @@
 <?php
 
-  if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
+  // if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
+  //
+  // }
+  require('includes/databaseconnect.php');
 
+  if($_SESSION['id'] == ''){
+      header("location:index.php");
   }
 
   $title = 'Password Reminder';

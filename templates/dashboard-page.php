@@ -28,7 +28,7 @@
     <div id="page-content">
 
 
-      <div class="col-md-4 col-xs-12">
+      <div class="col-sm-12 col-xs-12">
         <div class="panel panel-info">
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div class="col-md-4 col-xs-12">
+      <div class="col-sm-8 col-xs-12">
         <div class="panel panel-mint">
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -58,7 +58,7 @@
         </div>
       </div>
 
-      <div class="col-md-4 col-xs-12">
+      <div class="col-sm-4 col-xs-12">
         <div class="panel panel-default">
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
