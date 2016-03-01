@@ -25,7 +25,7 @@
   QRcode::png($textForDisplay, $filePath, QR_ECLEVEL_H, $size, $padding);
 ?>
 <div class="boxed">
-
+  
   <!--CONTENT CONTAINER-->
   <!--===================================================-->
   <div id="content-container">
