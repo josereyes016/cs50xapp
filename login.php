@@ -40,6 +40,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
         $_SESSION['email'] = $userInfo["email"];
         $_SESSION['fname'] = $userInfo["fname"];
         $_SESSION['lname'] = $userInfo["lname"];
+        $_SESSION['is_admin'] = $userInfo["is_admin"];
         header("location: index.php"); // Redirect to homepage
       }
     }

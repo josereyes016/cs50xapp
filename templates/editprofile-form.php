@@ -124,7 +124,12 @@
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Bio</label>
                   <div class="col-lg-7">
-                    <textarea class="form-control" name="bio" rows="7" placeholder="Tell us your story..." value="<?php if($currentBio != NULL){echo $currentBio;}?>" maxlength="200"></textarea>
+                    <?php if(isset($user['bio']) && $user['bio'] != '') : ?>
+                      <textarea class="form-control" name="bio" rows="7" placeholder="Tell us your story..." maxlength="200"><?= $user['bio'] ?></textarea>
+                    <?php endif; ?>
+                    <?php if($user['bio'] == NULL || $user['bio'] == '') :?>
+                      <textarea class="form-control" name="bio" rows="7" placeholder="Tell us your story..." maxlength="200"></textarea>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -145,25 +150,25 @@
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Facebook</label>
                   <div class="col-lg-7">
-                    <input type="text" class="form-control" name="facebook" placeholder="URL" <?php if($currentFacebook != NULL){echo $currentFacebook;}?>>
+                    <input type="text" class="form-control" name="facebook" placeholder="URL" value="<?php if($currentFacebook != NULL){echo $currentFacebook;}?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Twitter</label>
                   <div class="col-lg-7">
-                    <input type="text" class="form-control" name="twitter" placeholder="URL" <?php if($currentTwitter != NULL){echo $currentTwitter;}?>>
+                    <input type="text" class="form-control" name="twitter" placeholder="URL" value="<?php if($currentTwitter != NULL){echo $currentTwitter;}?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Google+</label>
                   <div class="col-lg-7">
-                    <input type="text" class="form-control" name="google" placeholder="URL" <?php if($currentGoogle != NULL){echo $currentGoogle;}?>>
+                    <input type="text" class="form-control" name="google" placeholder="URL" value="<?php if($currentGoogle != NULL){echo $currentGoogle;}?>">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">LinkedIn</label>
                   <div class="col-lg-7">
-                    <input type="text" class="form-control" name="linkedin" placeholder="URL" <?php if($currentLinkedin != NULL){echo $currentLinkedin;}?>>
+                    <input type="text" class="form-control" name="linkedin" placeholder="URL" value="<?php if($currentLinkedin != NULL){echo $currentLinkedin;}?>">
                   </div>
                 </div>
               </div>

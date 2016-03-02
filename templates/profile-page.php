@@ -15,16 +15,32 @@
 								<div class="pad-ver">
 									<img src="img/av1.png" class="img-lg img-border img-circle" alt="Profile Picture">
 								</div>
-								<h4 class="text-lg text-overflow mar-no">John Doe</h4>
-								<p class="text-sm">Digital Marketing Director</p>
+								<h4 class="text-lg text-overflow mar-no"><?= $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h4>
+								<p class="text-sm"><?php
+                  if($_SESSION['is_admin'] == 0){
+                    echo 'Student of CS50xMiami';
+                  }
+                  elseif($_SESSION['is_admin'] == 1){
+                    echo 'Teaching Fellow for CS50xMiami';
+                  }
+                  ?>
+                </p>
 
 								<div class="pad-ver btn-group">
-									<a title="" href="#" class="btn btn-icon btn-hover-primary fa fa-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
-									<a title="" href="#" class="btn btn-icon btn-hover-info fa fa-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
-									<a title="" href="#" class="btn btn-icon btn-hover-danger fa fa-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
-									<a title="" href="#" class="btn btn-icon btn-hover-mint fa fa-envelope icon-lg add-tooltip" data-original-title="Email" data-container="body"></a>
+                  <?php if(isset($user['facebook']) && $user['facebook'] != '') : ?>
+                        <a title="" href="<?= $user['facebook'] ?>" class="btn btn-icon btn-hover-primary fa fa-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
+                  <?php endif; ?>
+                  <?php if(isset($user['twitter']) && $user['twitter'] != '') : ?>
+                        <a title="" href="<?= $user['twitter'] ?>" class="btn btn-icon btn-hover-info fa fa-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+                  <?php endif; ?>
+                  <?php if(isset($user['google']) && $user['google'] != '') : ?>
+                        <a title="" href="<?= $user['google'] ?>" class="btn btn-icon btn-hover-danger fa fa-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
+                  <?php endif; ?>
+                  <?php if(isset($user['linkedin']) && $user['linkedin'] != '') : ?>
+                        <a title="" href="<?= $user['linkedin'] ?>" class="btn btn-icon btn-hover-primary fa fa-linkedin icon-lg add-tooltip" data-original-title="LinkedIn" data-container="body"></a>
+                  <?php endif; ?>
 								</div>
-								<button class="btn btn-block btn-success">Follow</button>
+								<a href="editprofile.php"><button class="btn btn-block btn-success">Edit</button></a>
 							</div>
 							<hr>
 							<ul class="list-group bg-trans">

@@ -1,6 +1,7 @@
 <?php
 
 require('includes/databaseconnect.php');
+require('includes/user.php');
 
 if($_SESSION['id'] == ''){
     header("location:index.php");
@@ -10,20 +11,13 @@ if($_SESSION['id'] == ''){
 $title = 'Profile Edit';
 
 $userID = $_SESSION['id'];
-// Query profile table for profile info
-$profileQuery = mysqli_query($db, "SELECT *
-                             FROM `profile`
-                            WHERE `id` = '$userID'");
-$profileRows = mysqli_num_rows($profileQuery);
-if ($profileRows == 1){
-  $profileInfo = mysqli_fetch_assoc($profileQuery);
-  $currentPhone = trim($profileInfo['phone']);
-  $currentBio = $profileInfo['bio'];
-  $currentFacebook = $profileInfo['facebook'];
-  $currentTwitter = $profileInfo['twitter'];
-  $currentGoogle = $profileInfo['google'];
-  $currentLinkedin = $profileInfo['linkedin'];
-}
+
+$currentPhone = $user['phone'];
+$currentBio = $user['bio'];
+$currentFacebook = $user['facebook'];
+$currentTwitter = $user['twitter'];
+$currentGoogle = $user['google'];
+$currentLinkedin = $user['linkedin'];
 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET")
@@ -50,35 +44,48 @@ elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   // Check for profile changes and update database
   if($fname_cleaned != $_SESSION['fname'] && $fname_cleaned != ''){
     mysqli_query($db, "UPDATE `users` SET `fname`='$fname_cleaned' WHERE `id`='$userID'");
+    $_SESSION['fname'] = $fname_cleaned;
+    $user['fname'] = $fname_cleaned;
   }
   if($lname_cleaned != $_SESSION['lname'] && $lname_cleaned != ''){
     mysqli_query($db, "UPDATE `users` SET `lname`='$lname_cleaned' WHERE `id`='$userID'");
+    $_SESSION['lname'] = $lname_cleaned;
+    $user['lname'] = $lname_cleaned;
   }
   if($email_cleaned != $_SESSION['email'] && $email_cleaned != ''){
     mysqli_query($db, "UPDATE `users` SET `email`='$email_cleaned' WHERE `id`='$userID'");
+    $_SESSION['email'] = $email_cleaned;
+    $user['email'] = $email_cleaned;
   }
   if($newPhone != $currentPhone){
     mysqli_query($db, "UPDATE `profile` SET `phone`='$newPhone' WHERE `id`='$userID'");
+    $user['phone'] = $newPhone;
   }
   if($newBio != $currentBio){
     mysqli_query($db, "UPDATE `profile` SET `bio`='$newBio' WHERE `id`='$userID'");
+    $user['bio'] = $newBio;
   }
   if($newFacebook != $currentFacebook){
     mysqli_query($db, "UPDATE `profile` SET `facebook`='$newFacebook' WHERE `id`='$userID'");
+    $user['facebook'] = $newFacebook;
   }
   if($newTwitter != $currentTwitter){
     mysqli_query($db, "UPDATE `profile` SET `twitter`='$newTwitter' WHERE `id`='$userID'");
+    $user['twitter'] = $newTwitter;
   }
   if($newGoogle != $currentGoogle){
     mysqli_query($db, "UPDATE `profile` SET `google`='$newGoogle' WHERE `id`='$userID'");
+    $user['google'] = $newGoogle;
   }
   if($newLinkedin != $currentLinkedin){
     mysqli_query($db, "UPDATE `profile` SET `linkedin`='$newLinkedin' WHERE `id`='$userID'");
+    $user['linkedin'] = $newLinkedin;
   }
 
   // Password change verification
 
   // Redirect to Profile.php
+  $_POST["submit"] == "";
   header("location: profile.php");
 }
 

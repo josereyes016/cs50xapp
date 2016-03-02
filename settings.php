@@ -1,6 +1,7 @@
 <?php
 
 require('includes/databaseconnect.php');
+require('includes/user.php');
 
 if($_SESSION['id'] == ''){
     header("location:index.php");
