@@ -25,15 +25,18 @@ if ($profileRows == 1){
   $currentLinkedin = $profileInfo['linkedin'];
 }
 
-// Render templates
-require('templates/head.php');
-require('templates/navbar.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "GET")
 {
+  // Render templates
+  require('templates/head.php');
+  require('templates/navbar.php');
   // Render form with default values from db
   require('templates/editprofile-form.php'); // Content container template
+  require('templates/navigation.php');
+  require('templates/footer.php');
 }
-elseif ($_SERVER["REQUEST_METHOD" == "POST"]) {
+elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   //Clean user input
   $fname_cleaned = ucfirst(strtolower(trim($_POST['fname'])));
   $lname_cleaned = ucfirst(strtolower(trim($_POST['lname'])));
@@ -46,48 +49,37 @@ elseif ($_SERVER["REQUEST_METHOD" == "POST"]) {
   $newLinkedin = $_POST['linkedin'];
   // Check for profile changes and update database
   if($fname_cleaned != $_SESSION['fname'] && $fname_cleaned != ''){
-    mysqli_query($db, "UPDATE `users` SET `fname`=$fname_cleaned WHERE `id`=$userID");
-    echo "First name updated.\n";
+    mysqli_query($db, "UPDATE `users` SET `fname`='$fname_cleaned' WHERE `id`='$userID'");
   }
-  if($lname_cleaned != $_SESSION['lname'] && $fname_cleaned != ''){
-    mysqli_query($db, "UPDATE `users` SET `lname`=$lname_cleaned WHERE `id`=$userID");
-    echo "Last name updated.\n";
+  if($lname_cleaned != $_SESSION['lname'] && $lname_cleaned != ''){
+    mysqli_query($db, "UPDATE `users` SET `lname`='$lname_cleaned' WHERE `id`='$userID'");
   }
   if($email_cleaned != $_SESSION['email'] && $email_cleaned != ''){
-    mysqli_query($db, "UPDATE `users` SET `email`=$email_cleaned WHERE `id`=$userID");
-    echo "E-mail updated.\n";
+    mysqli_query($db, "UPDATE `users` SET `email`='$email_cleaned' WHERE `id`='$userID'");
   }
-  if($newPhone != $currentPhone && $newPhone != ''){
-    mysqli_query($db, "UPDATE `profile` SET `phone`=$newPhone WHERE `id`=$userID");
-    echo "Phone number updated.\n";
+  if($newPhone != $currentPhone){
+    mysqli_query($db, "UPDATE `profile` SET `phone`='$newPhone' WHERE `id`='$userID'");
   }
-  if($newBio != $currentBio && $newBio != ''){
-    mysqli_query($db, "UPDATE `profile` SET `bio`=$newBio WHERE `id`=$userID");
-    echo "Bio updated.\n";
+  if($newBio != $currentBio){
+    mysqli_query($db, "UPDATE `profile` SET `bio`='$newBio' WHERE `id`='$userID'");
   }
-  if($newFacebook != $currentFacebook && $newFacebook != ''){
-    mysqli_query($db, "UPDATE `profile` SET `facebook`=$newFacebook WHERE `id`=$userID");
-    echo "Facebook URL updated.\n";
+  if($newFacebook != $currentFacebook){
+    mysqli_query($db, "UPDATE `profile` SET `facebook`='$newFacebook' WHERE `id`='$userID'");
   }
-  if($newTwitter != $currentTwitter && $newTwitter != ''){
-    mysqli_query($db, "UPDATE `profile` SET `twitter`=$newTwitter WHERE `id`=$userID");
-    echo "Twitter URL updated.\n";
+  if($newTwitter != $currentTwitter){
+    mysqli_query($db, "UPDATE `profile` SET `twitter`='$newTwitter' WHERE `id`='$userID'");
   }
-  if($newGoogle != $currentGoogle && $newGoogle != ''){
-    mysqli_query($db, "UPDATE `profile` SET `google`=$newGoogle WHERE `id`=$userID");
-    echo "Google+ URL updated.\n";
+  if($newGoogle != $currentGoogle){
+    mysqli_query($db, "UPDATE `profile` SET `google`='$newGoogle' WHERE `id`='$userID'");
   }
-  if($newLinkedin != $currentLinkedin && $newLinkedin != ''){
-    mysqli_query($db, "UPDATE `profile` SET `linkedin`=$newLinkedin WHERE `id`=$userID");
-    echo "LinkedIn URL updated.\n";
+  if($newLinkedin != $currentLinkedin){
+    mysqli_query($db, "UPDATE `profile` SET `linkedin`='$newLinkedin' WHERE `id`='$userID'");
   }
 
   // Password change verification
 
   // Redirect to Profile.php
-  header("location: editprofile.php");
+  header("location: profile.php");
 }
-require('templates/navigation.php');
-require('templates/footer.php');
 
 ?>
