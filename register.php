@@ -13,15 +13,10 @@
   if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 
     // TODO Clean variables for SQL queries && fix capitalization
-<<<<<<< HEAD
+
     $fname_cleaned = ucfirst(strtolower(trim($_POST['fname']))); // Strips white space, forces capitalization
     $lname_cleaned = ucfirst(strtolower(trim($_POST['lname'])));
     $email_cleaned = trim($_POST['email']); // Strips white space
-=======
-    $fname_cleaned = ucfirst(strtolower($_POST['fname']));
-    $lname_cleaned = ucfirst(strtolower($_POST['lname']));
-    $email_cleaned = $_POST['email'];
->>>>>>> 7ed255d0762ccc96409c879362a145ababf988ab
     $password_cleaned = $_POST['password'];
     $password2_cleaned = $_POST['password2'];
 
@@ -77,6 +72,11 @@
       $_SESSION['fname'] = $userInfo["fname"];
       $_SESSION['lname'] = $userInfo["lname"];
       $_SESSION['is_admin'] = $userInfo['is_admin'];
+
+      // Insert into profile DB
+      $userID = $_SESSION['id'];
+      mysqli_query($db, "INSERT INTO `profile` (`id`)
+                              VALUES ('$userID')");
       header("location: index.php");
     }
   }
