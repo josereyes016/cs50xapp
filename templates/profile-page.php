@@ -48,12 +48,15 @@
 								<!-- Profile Details -->
                 <?php if(isset($user['phone']) && $user['phone'] != '') : ?>
                   <li class="list-group-item list-item-sm">
-                    <i class="fa fa-phone fa-fw"></i><a href="tel:+1<?=preg_replace('/\D/', '', $user['phone'])?>"><?= $user['phone'] ?></a>
+                    <i class="fa fa-phone fa-fw"></i><a href="tel:+1<?=preg_replace('/\D/', '', $user['phone'])?>"> <?= $user['phone'] ?></a>
                   </li>
                 <?php endif; ?>
-								<li class="list-group-item list-item-sm">
+								<!-- <li class="list-group-item list-item-sm">
 									<i class="fa fa-clock-o fa-fw"></i> Member since 1 years ago
-								</li>
+								</li> -->
+                  <li class="list-group-item list-item-sm">
+                    <i class="fa fa-envelope fa-fw"></i><a href="mailto:<?=$user['email']?>"> <?= $user['email'] ?></a>
+                  </li>
 							</ul>
 							<hr>
 							<div class="pad-hor">
