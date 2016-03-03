@@ -35,7 +35,7 @@ elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   $fname_cleaned = ucfirst(strtolower(trim($_POST['fname'])));
   $lname_cleaned = ucfirst(strtolower(trim($_POST['lname'])));
   $email_cleaned = trim($_POST['email']);
-  $newPhone = $_POST['phone'];
+  $newPhone = trim($_POST['phone']);
   $newBio = $_POST['bio'];
   $newFacebook = $_POST['facebook'];
   $newTwitter = $_POST['twitter'];

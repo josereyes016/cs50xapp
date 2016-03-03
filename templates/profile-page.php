@@ -18,10 +18,10 @@
 								<h4 class="text-lg text-overflow mar-no"><?= $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h4>
 								<p class="text-sm"><?php
                   if($_SESSION['is_admin'] == 0){
-                    echo 'Student of CS50xMiami';
+                    echo 'Student';
                   }
                   elseif($_SESSION['is_admin'] == 1){
-                    echo 'Teaching Fellow for CS50xMiami';
+                    echo 'Teaching Fellow';
                   }
                   ?>
                 </p>
@@ -46,22 +46,20 @@
 							<ul class="list-group bg-trans">
 
 								<!-- Profile Details -->
-								<li class="list-group-item list-item-sm">
-									<i class="fa fa-home fa-fw"></i> San Jose, CA
-								</li>
+                <?php if(isset($user['phone']) && $user['phone'] != '') : ?>
+                  <li class="list-group-item list-item-sm">
+                    <i class="fa fa-phone fa-fw"></i><a href="tel:+1<?=preg_replace('/\D/', '', $user['phone'])?>"><?= $user['phone'] ?></a>
+                  </li>
+                <?php endif; ?>
 								<li class="list-group-item list-item-sm">
 									<i class="fa fa-clock-o fa-fw"></i> Member since 1 years ago
-								</li>
-								<li class="list-group-item list-item-sm text-primary text-semibold">
-									<a href="#" class="btn-link">
-										<i class="fa fa-globe fa-fw"></i> http://www.themeon.net
-									</a>
 								</li>
 							</ul>
 							<hr>
 							<div class="pad-hor">
 								<h5>About Me</h5>
-								<small class="text-thin">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</small>
+								<small class="text-thin">
+                </small>
 							</div>
 							<hr>
 							<div class="text-center clearfix">
