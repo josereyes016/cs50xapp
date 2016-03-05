@@ -15,8 +15,8 @@
   $padding = 2;
 
   // Set up directories + filepaths.
-  $qrDir = "qrcodes/" . date("m-d-y", $t) . "/";
-  $filePath = $qrDir . $_SESSION['fname'] . " " . $_SESSION['lname'] . ".png";
+  $qrDir = "qrcodes/";
+  $filePath = $qrDir . $_SESSION['id'] . ".png";
   if (!file_exists($qrDir)) {
     mkdir($qrDir, 0777, true);
   }
