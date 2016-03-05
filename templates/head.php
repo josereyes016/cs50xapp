@@ -58,7 +58,8 @@
     <script src="plugins/pace/pace.min.js"></script>
 
     <!-- Dropzone -->
-    <script src="./path/to/dropzone.js"></script>
+    <script src="js/dropzone.js"></script>
+    <link href="css/dropzone.css" rel="stylesheet">
 
 
     <!-- FullCalendar -->

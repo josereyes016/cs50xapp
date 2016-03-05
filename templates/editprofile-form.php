@@ -37,12 +37,14 @@
                   <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture">
                 </div>
                 <h4 class="text-lg text-overflow mar-no"><?= $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h4>
+                <br />
+                <form action="upload.php" class="dropzone"></form>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-8 col-xs-12">
           <!-- FORM VALIDATION ON ACCORDION -->
           <!--===================================================-->
           <form id="bv-accordion" class="form-horizontal" action="editprofile.php" method="post">
