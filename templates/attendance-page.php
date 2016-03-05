@@ -53,11 +53,10 @@
     <!--===================================================-->
     <div id="page-content">
       <div class="panel">
-        <div class="panel-heading">
-          Scan this code at the front to be marked as present.
-        </div>
 				<div class="panel-body">
           <img src="<?= $filePath ?>">
+          <hr />
+          <h4>Scan this code at the front to be marked as present.</h4>
 				</div>
 			</div>
 
