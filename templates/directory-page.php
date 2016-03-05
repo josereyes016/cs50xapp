@@ -28,7 +28,7 @@
     <div id="page-content">
 
       <div class="col-sm-4 col-xs-12">
-        <div class="panel panel-default">
+        <div class="panel panel-info">
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
           <div class="panel-heading">
@@ -41,13 +41,11 @@
           </div> -->
           <ul class="list-group">
             <?php foreach($admins as $admin){?>
-              <li class="list-group-item">
-                <a href="profile.php?uid=<?=$admin['id']?>">
+                <a class="list-group-item" href="profile.php?uid=<?=$admin['id']?>">
                   <div>
                     <?= $admin['fname'].' '.$admin['lname'] ?>
                   </div>
                 </a>
-              </li>
             <?php ;}?>
           </ul>
         </div>
@@ -67,13 +65,11 @@
           </div> -->
           <ul class="list-group">
             <?php foreach($students as $student){?>
-              <li class="list-group-item">
-                <a href="profile.php?uid=<?=$student['id']?>">
+                <a class="list-group-item" href="profile.php?uid=<?=$student['id']?>">
                   <div>
                     <?= $student['fname'].' '.$student['lname'] ?>
                   </div>
                 </a>
-              </li>
             <?php ;}?>
           </ul>
         </div>

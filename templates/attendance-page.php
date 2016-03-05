@@ -52,8 +52,15 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <h3>Scan this code at the front to be marked as present.</h3>
-      <img src="<?= $filePath ?>">
+      <div class="panel">
+        <div class="panel-heading">
+          Scan this code at the front to be marked as present.
+        </div>
+				<div class="panel-body">
+          <img src="<?= $filePath ?>">
+				</div>
+			</div>
+
     </div>
     <!--===================================================-->
     <!--End page content-->

@@ -1,5 +1,5 @@
 <body>
-	<div id="container" class="effect mainnav-sm navbar-fixed">
+	<div id="container" class="effect mainnav-lg navbar-fixed">
 
 		<!--NAVBAR-->
 		<!--===================================================-->
