@@ -27,7 +27,7 @@
     <!--===================================================-->
     <div id="page-content">
 
-      <div class="col-sm-4 col-xs-12">
+      <div class="col-sm-6 col-xs-12">
         <div class="panel panel-info">
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="col-sm-8 col-xs-12">
+      <div class="col-sm-6 col-xs-12">
         <div class="panel panel-mint">
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
