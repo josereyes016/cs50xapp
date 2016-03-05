@@ -52,7 +52,7 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <div class="panel">
+      <div class="panel col-sm-4">
 				<div class="panel-body">
           <img src="<?= $filePath ?>">
           <hr />
