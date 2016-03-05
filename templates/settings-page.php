@@ -27,21 +27,23 @@
     <!--===================================================-->
     <div id="page-content">
 
-      <div class="col-sm-8 col-xs-12">
+      <div class="col-sm-8 col-sm-offset-2 col-xs-12">
         <div class="panel panel-mint">
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
           <div class="panel-heading">
-            <h3 class="panel-title">Profile Info</h3>
+            <h3 class="panel-title">Privacy</h3>
           </div>
           <!-- Panel body -->
           <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
           <div class="panel-body">
               <!-- Content here -->
               <p>
-                Click the button below to edit your profile and account information.
+                By default, all contact info that you enter into your profile is public.
+                If you'd like to limit your info to only be viewable to admins such as TFs and Sari, please use the form below.
+                If you don't want anyone to view your info, you can delete the information from your profile by using the "Edit Profile" button on your profile page.
               </p>
-              <a href="editprofile.php"><button class="btn btn-info pull-right">Edit</button></a>
+              <hr class="hr-sm">
           </div>
         </div>
       </div>

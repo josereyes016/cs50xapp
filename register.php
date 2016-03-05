@@ -77,6 +77,9 @@
       $userID = $_SESSION['id'];
       mysqli_query($db, "INSERT INTO `profile` (`id`)
                               VALUES ('$userID')");
+      // Insert default privacy settings
+      mysqli_query($db, "INSERT INTO `privacy` (`id`, `phone`, `email`,`facebook`,`twitter`, `google`, `linkedin`)
+                              VALUES ('$userID', 0, 0, 0, 0, 0, 0)");
       header("location: index.php");
     }
   }

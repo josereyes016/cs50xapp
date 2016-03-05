@@ -7,19 +7,14 @@
     <!--================================-->
     <div id="mainnav-shortcut">
       <ul class="list-unstyled">
-        <li class="col-xs-4" data-content="Additional Sidebar">
+        <li class="col-xs-6" data-content="QR Code">
           <a id="demo-toggle-aside" class="shortcut-grid" href="#">
-            <i class="fa fa-magic"></i>
+            <i class="fa fa-qrcode"></i>
           </a>
         </li>
-        <li class="col-xs-4" data-content="Notification">
-          <a id="demo-alert" class="shortcut-grid" href="#">
+        <li class="col-xs-6" data-content="Notifications">
+          <a id="demo-toggle-aside" class="shortcut-grid" href="#">
             <i class="fa fa-bullhorn"></i>
-          </a>
-        </li>
-        <li class="col-xs-4" data-content="Page Alerts">
-          <a id="demo-page-alert" class="shortcut-grid" href="#">
-            <i class="fa fa-bell"></i>
           </a>
         </li>
       </ul>
@@ -78,18 +73,8 @@
 
             <!--Menu list item-->
             <li>
-              <a href="attendance.php">
-                <i class="fa fa-flask"></i>
-                <span class="menu-title">
-                  <strong>Attendance</strong>
-                </span>
-              </a>
-            </li>
-
-            <!--Menu list item-->
-            <li>
               <a href="grades.php">
-                <i class="fa fa-flask"></i>
+                <i class="fa fa-graduation-cap"></i>
                 <span class="menu-title">
                   <strong>Grades</strong>
                 </span>
@@ -98,10 +83,31 @@
 
             <!--Menu list item-->
             <li>
+              <a href="attendance.php">
+                <i class="fa fa-check-circle"></i>
+                <span class="menu-title">
+                  <strong>Attendance</strong>
+                </span>
+              </a>
+            </li>
+
+            <!--Menu list item-->
+            <li>
               <a href="calendar.php">
-                <i class="fa fa-table"></i>
+                <i class="fa fa-calendar"></i>
                 <span class="menu-title">
                   <strong>Calendar</strong>
+                  <!-- <span class="pull-right badge badge-warning">9</span> -->
+                </span>
+              </a>
+            </li>
+
+            <!--Menu list item-->
+            <li>
+              <a href="directory.php">
+                <i class="fa fa-users"></i>
+                <span class="menu-title">
+                  <strong>Directory</strong>
                   <!-- <span class="pull-right badge badge-warning">9</span> -->
                 </span>
               </a>

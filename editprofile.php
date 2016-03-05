@@ -13,6 +13,7 @@ $title = 'Profile Edit';
 $userID = $_SESSION['id'];
 
 $currentPhone = $user['phone'];
+$currentSlack = $user['slack'];
 $currentBio = $user['bio'];
 $currentFacebook = $user['facebook'];
 $currentTwitter = $user['twitter'];
@@ -30,12 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET")
   require('templates/navigation.php');
   require('templates/footer.php');
 }
-elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
+elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit"){
   //Clean user input
   $fname_cleaned = ucfirst(strtolower(trim($_POST['fname'])));
   $lname_cleaned = ucfirst(strtolower(trim($_POST['lname'])));
   $email_cleaned = trim($_POST['email']);
   $newPhone = trim($_POST['phone']);
+  $newSlack = strtolower(trim($_POST['slack']));
   $newBio = $_POST['bio'];
   $newFacebook = $_POST['facebook'];
   $newTwitter = $_POST['twitter'];
@@ -61,6 +63,10 @@ elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
     mysqli_query($db, "UPDATE `profile` SET `phone`='$newPhone' WHERE `id`='$userID'");
     $user['phone'] = $newPhone;
   }
+  if($newSlack != $currentSlack){
+    mysqli_query($db, "UPDATE `profile` SET `slack`='$newSlack' WHERE `id`='$userID'");
+    $user['slack'] = $newSlack;
+  }
   if($newBio != $currentBio){
     mysqli_query($db, "UPDATE `profile` SET `bio`='$newBio' WHERE `id`='$userID'");
     $user['bio'] = $newBio;
@@ -83,7 +89,28 @@ elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   }
 
   // Password change verification
+  $currentpw = $_POST['currentpw'];
+  $newpw = $_POST['newpw'];
+  $confpw = $_POST['confpw'];
 
+  if($currentpw != '' && $newpw != '' && $confpw != ''){
+    $passwordQuery = mysqli_query($db, "SELECT *
+                                  FROM `users`
+                                 WHERE `id` = '$userID'");
+    $pwrows = mysqli_num_rows($passwordQuery);
+    if ($pwrows == 1) {
+      $passwordInfo = mysqli_fetch_assoc($passwordQuery);
+      if (password_verify($currentpw, $passwordInfo["password"])){
+        if ($newpw == $confpw){
+          $cryptNewpw = password_hash($newpw, PASSWORD_DEFAULT);
+
+          mysqli_query($db, "UPDATE `users`
+                                SET `password`=$cryptNewpw
+                              WHERE `id`=$userID");
+        }
+      }
+    }
+  }
   // Redirect to Profile.php
   $_POST["submit"] == "";
   header("location: profile.php");

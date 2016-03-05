@@ -63,6 +63,11 @@
                           <a href="tel:+1<?=preg_replace('/\D/', '', $user['phone'])?>"><i class="fa fa-phone fa-fw"></i> <?= $user['phone'] ?></a>
                         </li>
                       <?php endif; ?>
+                      <?php if(isset($user['slack']) && $user['slack'] != '') : ?>
+                        <li class="list-group-item list-item-sm">
+                          <a href="https://cs50xmiami.slack.com/messages/<?=$user['slack']?>/"><i class="fa fa-slack fa-fw"></i> <?= $user['slack'] ?></a>
+                        </li>
+                      <?php endif; ?>
                       <!-- <li class="list-group-item list-item-sm">
                         <i class="fa fa-clock-o fa-fw"></i> Member since 1 years ago
                       </li> -->
