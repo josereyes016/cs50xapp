@@ -18,34 +18,34 @@
                       <div class="pad-ver">
                         <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture">
                       </div>
-                      <h4 class="text-lg text-overflow mar-no"><?= $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h4>
+                      <h4 class="text-lg text-overflow mar-no"><?= $profileData['fname'] . ' ' . $profileData['lname'] ?></h4>
                       <p class="text-sm"><?php
-                        if($_SESSION['is_admin'] == 0){
+                        if($profileData['is_admin'] == 0){
                           echo 'Student';
                         }
-                        elseif($_SESSION['is_admin'] == 1){
+                        elseif($profileData['is_admin'] == 1){
                           echo 'Teaching Fellow';
                         }
                         ?>
                       </p>
                       <div class="pad-ver btn-group">
-                        <?php if(isset($user['facebook']) && $user['facebook'] != '') : ?>
-                              <a title="" href="<?= $user['facebook'] ?>" class="btn btn-icon btn-hover-primary fa fa-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
+                        <?php if(isset($profileData['facebook']) && $profileData['facebook'] != '') : ?>
+                              <a title="" href="<?= $profileData['facebook'] ?>" class="btn btn-icon btn-hover-primary fa fa-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
                         <?php endif; ?>
-                        <?php if(isset($user['twitter']) && $user['twitter'] != '') : ?>
-                              <a title="" href="<?= $user['twitter'] ?>" class="btn btn-icon btn-hover-info fa fa-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+                        <?php if(isset($profileData['twitter']) && $profileData['twitter'] != '') : ?>
+                              <a title="" href="<?= $profileData['twitter'] ?>" class="btn btn-icon btn-hover-info fa fa-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
                         <?php endif; ?>
-                        <?php if(isset($user['google']) && $user['google'] != '') : ?>
-                              <a title="" href="<?= $user['google'] ?>" class="btn btn-icon btn-hover-danger fa fa-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
+                        <?php if(isset($profileData['google']) && $profileData['google'] != '') : ?>
+                              <a title="" href="<?= $profileData['google'] ?>" class="btn btn-icon btn-hover-danger fa fa-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
                         <?php endif; ?>
-                        <?php if(isset($user['linkedin']) && $user['linkedin'] != '') : ?>
-                              <a title="" href="<?= $user['linkedin'] ?>" class="btn btn-icon btn-hover-primary fa fa-linkedin icon-lg add-tooltip" data-original-title="LinkedIn" data-container="body"></a>
+                        <?php if(isset($profileData['linkedin']) && $profileData['linkedin'] != '') : ?>
+                              <a title="" href="<?= $profileData['linkedin'] ?>" class="btn btn-icon btn-hover-primary fa fa-linkedin icon-lg add-tooltip" data-original-title="LinkedIn" data-container="body"></a>
                         <?php endif; ?>
                       </div>
                     </div>
-
-                    <a href="editprofile.php"><button class="btn btn-block btn-success">Edit</button></a>
-
+                    <?php if($profileData['id'] == $user['id']) : ?>
+                      <a href="editprofile.php"><button class="btn btn-block btn-success">Edit</button></a>
+                    <?php endif; ?>
                   </div>
                 </div>
               </div>
@@ -58,21 +58,21 @@
                   <div class="panel-body">
                     <ul class="list-group bg-trans">
                       <!-- Profile Details -->
-                      <?php if(isset($user['phone']) && $user['phone'] != '') : ?>
+                      <?php if(isset($profileData['phone']) && $profileData['phone'] != '') : ?>
                         <li class="list-group-item list-item-sm">
-                          <a href="tel:+1<?=preg_replace('/\D/', '', $user['phone'])?>"><i class="fa fa-phone fa-fw"></i> <?= $user['phone'] ?></a>
+                          <a href="tel:+1<?=preg_replace('/\D/', '', $profileData['phone'])?>"><i class="fa fa-phone fa-fw"></i> <?= $profileData['phone'] ?></a>
                         </li>
                       <?php endif; ?>
-                      <?php if(isset($user['slack']) && $user['slack'] != '') : ?>
+                      <?php if(isset($profileData['slack']) && $profileData['slack'] != '') : ?>
                         <li class="list-group-item list-item-sm">
-                          <a href="https://cs50xmiami.slack.com/messages/<?=$user['slack']?>/"><i class="fa fa-slack fa-fw"></i> <?= $user['slack'] ?></a>
+                          <a href="https://cs50xmiami.slack.com/messages/<?=$profileData['slack']?>/"><i class="fa fa-slack fa-fw"></i> <?= $profileData['slack'] ?></a>
                         </li>
                       <?php endif; ?>
                       <!-- <li class="list-group-item list-item-sm">
                         <i class="fa fa-clock-o fa-fw"></i> Member since 1 years ago
                       </li> -->
                         <li class="list-group-item list-item-sm">
-                          <a href="mailto:<?=$user['email']?>"><i class="fa fa-envelope fa-fw"></i> <?= $user['email'] ?></a>
+                          <a href="mailto:<?=$profileData['email']?>"><i class="fa fa-envelope fa-fw"></i> <?= $profileData['email'] ?></a>
                         </li>
                     </ul>
                   </div>
@@ -87,8 +87,8 @@
                   <div class="panel-body">
                     <div class="pad-hor">
                       <p class="text-thin">
-                        <?php if($user['bio'] != NULL && $user['bio'] != ''){
-                          echo $user['bio'];
+                        <?php if($profileData['bio'] != NULL && $profileData['bio'] != ''){
+                          echo $profileData['bio'];
                         } else {
                           echo "Hello world!";
                         } ?>
