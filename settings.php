@@ -10,6 +10,8 @@ if($_SESSION['id'] == ''){
 // Set dynamic page title
 $title = 'Settings';
 
+
+
 // Render templates
 require('templates/head.php');
 require('templates/navbar.php');
