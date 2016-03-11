@@ -39,7 +39,6 @@ if (!file_exists($qrDir)) {
 QRcode::png($textForDisplay, $filePath, QR_ECLEVEL_H, $size, $padding);
 
 // Render templates
-require ("includes/databaseconnect.php");
 require('templates/head.php');
 require('templates/navbar.php');
 require('templates/attendance-page.php'); // Content container template

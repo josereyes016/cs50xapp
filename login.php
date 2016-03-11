@@ -7,6 +7,7 @@ $email = "";
 $password = "";
 $formError = "";
 
+
 // If submit button WAS clicked
 if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   //TODO Clean Vars
@@ -155,7 +156,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 						</div>
 						<div class="row">
               <div id="error">
-                <p><?= $formError ?></p>
+                <p style="color:red;"><?= $formError ?></p>
               </div>
 							<!-- <div class="col-xs-8 text-left checkbox">
 								<label class="form-checkbox form-icon">
@@ -168,15 +169,15 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
 								</div>
 							</div>
 						</div>
-						<div class="mar-btm"><em>- or -</em></div>
+						<!-- <div class="mar-btm"><em>- or -</em></div>
 						<button class="btn btn-primary btn-lg btn-block" type="button">
 							<i class="fa fa-facebook fa-fw"></i> Login with Facebook
-						</button>
+						</button> -->
 					</form>
 				</div>
 			</div>
 			<div class="pad-ver">
-				<a href="password-reminder.php" class="btn-link mar-rgt">Forgot password ?</a>
+				<!-- <a href="password-reminder.php" class="btn-link mar-rgt">Forgot password ?</a> -->
 				<a href="register.php" class="btn-link mar-lft">Create a new account</a>
 			</div>
 		</div>

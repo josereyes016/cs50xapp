@@ -7,6 +7,10 @@
   $email = "";
   $password = "";
   $password2 = "";
+
+  $adminkey = "adminkey";
+  $studentkey = "studentkey";
+
   $formError = "";
 
   // if form submitted
@@ -19,12 +23,19 @@
     $email_cleaned = trim($_POST['email']); // Strips white space
     $password_cleaned = $_POST['password'];
     $password2_cleaned = $_POST['password2'];
+    $key = $_POST['key'];
 
     $isWorking = True;
 
     // TODO if entries are NOT filled
-    if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2'])) {
+    if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']) || empty($key)) {
       $formError = "Please fill out all required fields.";
+      $isWorking = False;
+    }
+
+    // If not valid registration key
+    if ($key != $studentkey && $key != $adminkey){
+      $formError = "Invalid registration key.";
       $isWorking = False;
     }
 
@@ -58,11 +69,16 @@
     }
 
     $cryptpw = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    if ($key == $adminkey){
+      $is_admin = 1;
+    } else {
+      $is_admin = 0;
+    }
 
     // Saves info to users database
     if ($isWorking) {
       mysqli_query($db, "INSERT INTO `users` (`fname`, `lname`, `email`, `password`, `is_admin`)
-                              VALUES ('$fname_cleaned', '$lname_cleaned', '$email_cleaned', '$cryptpw', 0)");
+                              VALUES ('$fname_cleaned', '$lname_cleaned', '$email_cleaned', '$cryptpw', '$is_admin')");
       $query = mysqli_query($db, "SELECT *
                                     FROM `users`
                                    WHERE `email` = '$email_cleaned'");
@@ -83,7 +99,7 @@
       header("location: index.php");
     }
   }
-  echo $formError;
+  // echo $formError;
 
   $title = 'Register'
 ?>
@@ -232,9 +248,20 @@
                     <input type="password" class="form-control" placeholder="Confirm password" name="password2">
                   </div>
                 </div>
-                <!-- <div id="error">
-                  <p></p>
-                </div> -->
+
+                <hr />
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
+                    <input type="password" class="form-control" placeholder="Registration key" name="key">
+                  </div>
+                </div>
+
+
+                <div id="error">
+                  <p style="color:red;"><?=$formError?></p>
+                </div>
 							<!-- <div class="col-xs-8 text-left checkbox">
 								<label class="form-checkbox form-icon">
 									<input type="checkbox"> I agree with the <a href="#" class="btn-link">Terms and Conditions</a>
@@ -246,10 +273,10 @@
 								</div>
 							</div>
 
-						<div class="mar-btm"><em>- or -</em></div>
+						<!-- <div class="mar-btm"><em>- or -</em></div>
 						<button class="btn btn-primary btn-lg btn-block" type="button">
 							<i class="fa fa-facebook fa-fw"></i> Sign Up with Facebook
-						</button>
+						</button> -->
 					</form>
 				</div>
 			</div>
