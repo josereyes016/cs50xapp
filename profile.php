@@ -75,6 +75,14 @@ else {
     'google' => $user['google'],
     'linkedin' => $user['linkedin']
   );
+  $profilePrivacy = array(
+    'phone' => $privacy['phone-admin'],
+    'email' => $privacy['email-admin'],
+    'facebook' => $privacy['facebook-admin'],
+    'twitter' => $privacy['twitter-admin'],
+    'google' => $privacy['google-admin'],
+    'linkedin' => $privacy['linkedin-admin']
+  );
 }
 
 
