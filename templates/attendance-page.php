@@ -1,29 +1,3 @@
-<?php
-  include('includes/phpqrcode/qrlib.php');
-
-  // Get time
-  date_default_timezone_set("America/New_York"); // Miami time!
-  $t=time();
-  $currentDate = date("m/d/y", $t);
-  $currentTime = date("h:i:s");
-
-  // Text to be stored on QR code, in format for CSV file
-  $textForDisplay = $_SESSION['fname'] . "," . $_SESSION['lname'] . "," . $_SESSION['email'] . "," . $currentDate . "," . $currentTime;
-
-  // QR info
-  $size = 4;
-  $padding = 2;
-
-  // Set up directories + filepaths.
-  $qrDir = "qrcodes/";
-  $filePath = $qrDir . $_SESSION['id'] . ".png";
-  if (!file_exists($qrDir)) {
-    mkdir($qrDir, 0777, true);
-  }
-
-  // Generate & display QR code. Saves QR to folder for backup.
-  QRcode::png($textForDisplay, $filePath, QR_ECLEVEL_H, $size, $padding);
-?>
 <div class="boxed">
 
   <!--CONTENT CONTAINER-->
