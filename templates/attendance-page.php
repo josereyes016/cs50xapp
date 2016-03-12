@@ -26,7 +26,7 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <div class="panel col-xs-8 col-xs-offset-2">
+      <div class="panel col-xs-12">
 				<div class="panel-body">
           <img src="<?= $filePath ?>">
           <hr />
