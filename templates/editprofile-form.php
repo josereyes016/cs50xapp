@@ -37,7 +37,7 @@
                   <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture">
                 </div>
                 <h4 class="text-lg text-overflow mar-no"><?= $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h4>
-                <br />
+                <br/>
                 <form action="upload.php" class="dropzone"></form>
               </div>
             </div>
