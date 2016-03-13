@@ -4,7 +4,7 @@ include('user.php');
 
 // Source: http://www.startutorial.com/articles/view/how-to-build-a-file-upload-form-using-dropzonejs-and-php
 $ds = DIRECTORY_SEPARATOR;  //Store directory separator (DIRECTORY_SEPARATOR) to a simple variable
-$storeFolder = 'uploads';   //Declare a variable for destination folder.
+$storeFolder = 'img/profiles';  //Declare a variable for destination folder.
 
 if (!file_exists($storeFolder)) {
   mkdir($storeFolder, 0750, true);
