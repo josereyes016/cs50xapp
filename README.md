@@ -1,3 +1,19 @@
 # cs50xapp
 
-# THIS IS CS50xMiami!
+### Installation
+
+### Navigation
+##### Dashboard
+  - This
+  - Does
+  - Stuff
+##### Grades
+
+##### Attendance
+
+##### Calendar
+
+##### Directory
+
+###### This is CS50xMiami!
+&copy; CS50xMiami
