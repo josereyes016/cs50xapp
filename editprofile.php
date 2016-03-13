@@ -105,8 +105,8 @@ elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit"){
           $cryptNewpw = password_hash($newpw, PASSWORD_DEFAULT);
 
           mysqli_query($db, "UPDATE `users`
-                                SET `password`=$cryptNewpw
-                              WHERE `id`=$userID");
+                                SET `password`='$cryptNewpw'
+                              WHERE `id`='$userID'");
         }
       }
     }
