@@ -95,10 +95,10 @@ elseif (!empty($_POST["submit"]) && $_POST["submit"] == "submit"){
 
   if($currentpw != '' && $newpw != '' && $confpw != ''){
     $passwordQuery = mysqli_query($db, "SELECT *
-                                  FROM `users`
-                                 WHERE `id` = '$userID'");
+                                          FROM `users`
+                                         WHERE `id` = '$userID'");
     $pwrows = mysqli_num_rows($passwordQuery);
-    if ($pwrows == 1) {
+    if ($pwrows == 1){
       $passwordInfo = mysqli_fetch_assoc($passwordQuery);
       if (password_verify($currentpw, $passwordInfo["password"])){
         if ($newpw == $confpw){
