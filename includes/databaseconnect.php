@@ -4,6 +4,8 @@
   $password = "";
   $dbname = "cs50xapp";
 
+  include("lib/password.php");
+
   // Create connection
   $db = mysqli_connect($servername, $username, $password, $dbname);
 
