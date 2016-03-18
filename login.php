@@ -7,6 +7,7 @@ $email = "";
 $password = "";
 $formError = "";
 
+
 // If submit button WAS clicked
 if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   //TODO Clean Vars

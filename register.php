@@ -69,6 +69,11 @@
     }
 
     $cryptpw = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    if ($cryptpw == false){
+      $formError = "Failed to encrypt password.";
+      $isWorking = False;
+    }
+
     if ($key == $adminkey){
       $is_admin = 1;
     } else {
