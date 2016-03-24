@@ -8,12 +8,12 @@
     <div id="mainnav-shortcut">
       <ul class="list-unstyled">
         <li class="col-xs-6" data-content="QR Code">
-          <a id="demo-toggle-aside" class="shortcut-grid" href="#">
+          <a id="demo-toggle-aside" class="shortcut-grid" href="../attendance.php">
             <i class="fa fa-qrcode"></i>
           </a>
         </li>
         <li class="col-xs-6" data-content="Notifications">
-          <a id="demo-toggle-aside" class="shortcut-grid" href="#">
+          <a id="demo-toggle-aside" class="shortcut-grid" href="../dashboard.php">
             <i class="fa fa-bullhorn"></i>
           </a>
         </li>

@@ -27,7 +27,7 @@
     <!--===================================================-->
     <div id="page-content">
 
-      
+      <?php if($user['is_admin'] == 1) : ?>
         <div class="col-sm-8">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -38,7 +38,7 @@
             </div>
           </div>
         </div>
-
+      <?php endif; ?>
 
     </div>
     <!--===================================================-->

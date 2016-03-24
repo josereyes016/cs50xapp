@@ -20,15 +20,16 @@
 
     $fname_cleaned = ucfirst(strtolower(trim($_POST['fname']))); // Strips white space, forces capitalization
     $lname_cleaned = ucfirst(strtolower(trim($_POST['lname'])));
-    $email_cleaned = trim($_POST['email']); // Strips white space
+    $email_cleaned = trim(strtolower($_POST['email'])); // Strips white space and removes capitalization
     $password_cleaned = $_POST['password'];
     $password2_cleaned = $_POST['password2'];
     $key = $_POST['key'];
+    $tf = $_POST['tf'];
 
     $isWorking = True;
 
     // TODO if entries are NOT filled
-    if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']) || empty($key)) {
+    if (empty($fname_cleaned) || empty($lname_cleaned) || empty($email_cleaned) || empty($password_cleaned) || empty($password2_cleaned) || empty($key) || empty($tf)) {
       $formError = "Please fill out all required fields.";
       $isWorking = False;
     }
@@ -154,10 +155,6 @@
     <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
-    <!--Demo [ DEMONSTRATION ]-->
-    <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
-
-
 
 
     <!--SCRIPT-->
@@ -166,6 +163,12 @@
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
+
+    <!-- Bootstrap Select -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
 
 
@@ -254,6 +257,33 @@
                   </div>
                 </div>
 
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-male"></i></div>
+                    <input type="text" class="form-control" placeholder="Teaching Fellow" name="tf">
+                  </div>
+                </div>
+
+                <select class="selectpicker" style="display: none;">
+									<option>HTML</option>
+									<option>CSS</option>
+									<option>jQuery</option>
+									<option>Javascript</option>
+								</select>
+                <div class="btn-group bootstrap-select dropdown open">
+                  <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="HTML" aria-expanded="false">
+                    <span class="filter-option pull-left">HTML</span>&nbsp;<span class="caret"></span>
+                  </button>
+                  <div class="dropdown-menu open" style="max-height: 332px; overflow: hidden; min-height: 80px;">
+                    <ul class="dropdown-menu inner selectpicker" role="menu" style="max-height: 330px; overflow-y: auto; min-height: 78px;">
+                      <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="HTML"><span class="text">HTML</span><span class="fa fa-check check-mark"></span></a></li>
+                      <li data-original-index="1"><a tabindex="0" class="" data-normalized-text="CSS"><span class="text">CSS</span><span class="fa fa-check check-mark"></span></a></li>
+                      <li data-original-index="2"><a tabindex="0" class="" data-normalized-text="jQuery"><span class="text">jQuery</span><span class="fa fa-check check-mark"></span></a></li>
+                      <li data-original-index="3"><a tabindex="0" class="" data-normalized-text="Javascript"><span class="text">Javascript</span><span class="fa fa-check check-mark"></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+
                 <hr />
 
                 <div class="form-group">
@@ -262,7 +292,6 @@
                     <input type="password" class="form-control" placeholder="Registration key" name="key">
                   </div>
                 </div>
-
 
                 <div id="error">
                   <p style="color:red;"><?=$formError?></p>
@@ -315,7 +344,6 @@
 
     <!--Nifty Admin [ RECOMMENDED ]-->
     <script src="js/nifty.min.js"></script>
-
 
     <!--Background Image [ DEMONSTRATION ]-->
     <script src="js/demo/bg-images.js"></script>
