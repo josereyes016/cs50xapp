@@ -11,7 +11,7 @@ $formError = "";
 // If submit button WAS clicked
 if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   //TODO Clean Vars
-  $email_cleaned = $_POST['email'];
+  $email_cleaned = trim(strtolower($_POST['email']));
   $password_cleaned = $_POST['password'];
   $isWorking = True;
 
