@@ -26,6 +26,13 @@ if (isset($_SESSION['id'])){
     $profileInfo = mysqli_fetch_assoc($profileQuery);
     $privacyInfo = mysqli_fetch_assoc($privacyQuery);
 
+    if($profileInfo['avatar_path'] == NULL || $profileInfo['avatar_path'] == ''){
+      $avatar_path = "img/av1.png";
+    }
+    else {
+      $avatar_path = $profileInfo['avatar_path'];
+    }
+
     $user = array(
       'id' => $userInfo['id'],
       'email' => $userInfo['email'],
@@ -39,7 +46,8 @@ if (isset($_SESSION['id'])){
       'facebook' => $profileInfo['facebook'],
       'twitter' => $profileInfo['twitter'],
       'google' => $profileInfo['google'],
-      'linkedin' => $profileInfo['linkedin']
+      'linkedin' => $profileInfo['linkedin'],
+      'avatar_path' => $avatar_path
     );
 
     $privacy = array(

@@ -18,6 +18,7 @@
                       <div class="pad-ver">
                         <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture">
                       </div>
+
                       <h4 class="text-lg text-overflow mar-no"><?= $profileData['fname'] . ' ' . $profileData['lname'] ?></h4>
                       <p class="text-sm"><?php
                         if($profileData['is_admin'] == 0){
