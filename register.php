@@ -229,58 +229,31 @@
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-male"></i></div>
-										<input type="text" class="form-control" placeholder="First name" name="fname">
+										<input type="text" class="form-control" placeholder="First name" name="fname" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-user"></i></div>
-										<input type="text" class="form-control" placeholder="Last name" name="lname">
+										<input type="text" class="form-control" placeholder="Last name" name="lname" required>
 									</div>
 								</div>
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                    <input type="text" class="form-control" placeholder="E-mail" name="email">
+                    <input type="text" class="form-control" placeholder="E-mail" name="email" required>
                   </div>
                 </div>
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-										<input type="password" class="form-control" placeholder="Password" name="password">
+										<input type="password" class="form-control" placeholder="Password" name="password" required>
 									</div>
 								</div>
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                    <input type="password" class="form-control" placeholder="Confirm password" name="password2">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon"><i class="fa fa-male"></i></div>
-                    <input type="text" class="form-control" placeholder="Teaching Fellow" name="tf">
-                  </div>
-                </div>
-
-                <select class="selectpicker" style="display: none;">
-									<option>HTML</option>
-									<option>CSS</option>
-									<option>jQuery</option>
-									<option>Javascript</option>
-								</select>
-                <div class="btn-group bootstrap-select dropdown open">
-                  <button type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown" title="HTML" aria-expanded="false">
-                    <span class="filter-option pull-left">HTML</span>&nbsp;<span class="caret"></span>
-                  </button>
-                  <div class="dropdown-menu open" style="max-height: 332px; overflow: hidden; min-height: 80px;">
-                    <ul class="dropdown-menu inner selectpicker" role="menu" style="max-height: 330px; overflow-y: auto; min-height: 78px;">
-                      <li data-original-index="0" class="selected"><a tabindex="0" class="" data-normalized-text="HTML"><span class="text">HTML</span><span class="fa fa-check check-mark"></span></a></li>
-                      <li data-original-index="1"><a tabindex="0" class="" data-normalized-text="CSS"><span class="text">CSS</span><span class="fa fa-check check-mark"></span></a></li>
-                      <li data-original-index="2"><a tabindex="0" class="" data-normalized-text="jQuery"><span class="text">jQuery</span><span class="fa fa-check check-mark"></span></a></li>
-                      <li data-original-index="3"><a tabindex="0" class="" data-normalized-text="Javascript"><span class="text">Javascript</span><span class="fa fa-check check-mark"></span></a></li>
-                    </ul>
+                    <input type="password" class="form-control" placeholder="Confirm password" name="password2" required>
                   </div>
                 </div>
 

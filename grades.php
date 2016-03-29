@@ -4,6 +4,7 @@
 // }
 require('includes/databaseconnect.php');
 require('includes/user.php');
+require('includes/assignments.php');
 
 if($_SESSION['id'] == ''){
     header("location:index.php");
@@ -14,7 +15,18 @@ $title = 'Grades';
 
 $formError = '';
 $formSuccess = '';
+$gradeError = '';
+$gradeSuccess = '';
+
 $userID = $user['id'];
+
+$studentsQuery = mysqli_query($db, "SELECT *
+                                   FROM `users`
+                                  WHERE `tf`='$userID'");
+$students = [];
+while ($student = $studentsQuery->fetch_assoc()) {
+    $students[] = $student;
+}
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addStudent'){
   if ($_POST['email'] == ''){
@@ -41,6 +53,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['su
       }
     }
   }
+}
+elseif ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['uid'])){
+
 }
 
 // Render templates

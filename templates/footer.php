@@ -1,23 +1,25 @@
 <!-- FOOTER -->
 <!--===================================================-->
-<footer id="footer">
+
+
+<footer id="footer show-fixed">
 
 
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="pull-right pad-rgt">Currently v0.0.1</div>
+    <!-- <div class="pull-right pad-rgt">Currently v0.0.1</div> -->
 
 
 
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+    <!-- Remove the class name "show-fixed" and "show-fixed" to make the content always appears. -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-    <p class="pad-lft">&#0169; <?= date("Y") ?></p>
-
+    <!-- <div class="pull-left pad-rgt"><p class="pad-lft">&#0169; <?= date("Y") ?></p></div> -->
 
 
 </footer>
+
 <!--===================================================-->
 <!-- END FOOTER -->
 

@@ -7,7 +7,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-      <h1 class="page-header text-overflow"><?= $title ?></h1>
+      <!-- <h1 class="page-header text-overflow"><?= $title ?></h1> -->
 
       <!--TODO Searchbox-->
       <!-- <div class="searchbox">
@@ -26,13 +26,15 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <div class="panel col-sm-4">
-				<div class="panel-body">
-          <img src="<?= $filePath ?>">
+      <div class="panel col-sm-3">
+	      <div class="panel-body">
+          <div class="mar-hor">
+            <img src="<?= $filePath ?>">
+          </div>
           <hr />
           <h4>Scan this code at the front to be marked as present.</h4>
-				</div>
-			</div>
+        </div>
+      </div>
 
     </div>
     <!--===================================================-->
@@ -42,3 +44,4 @@
   </div>
   <!--===================================================-->
   <!--END CONTENT CONTAINER-->
+</div>

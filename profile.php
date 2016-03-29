@@ -15,14 +15,14 @@ $title = 'Profile';
 if(!empty($_GET['uid']) && $_GET['uid'] != $_SESSION['id']){
   $otherUserId = $_GET['uid'];
   $otherUserInfoQuery = mysqli_query($db, "SELECT *
-                                         FROM `users`
-                                        WHERE `id`=$otherUserId");
+                                             FROM `users`
+                                            WHERE `id`=$otherUserId");
   $otherUserProfileQuery = mysqli_query($db, "SELECT *
-                                         FROM `profile`
-                                        WHERE `id`=$otherUserId");
+                                                FROM `profile`
+                                               WHERE `id`=$otherUserId");
   $otherUserPrivacyQuery = mysqli_query($db, "SELECT *
-                                         FROM `privacy`
-                                        WHERE `id`=$otherUserId");
+                                                FROM `privacy`
+                                               WHERE `id`=$otherUserId");
 
   $otherUserInfoRows = mysqli_num_rows($otherUserInfoQuery);
   $otherUserProfileRows = mysqli_num_rows($otherUserProfileQuery);
