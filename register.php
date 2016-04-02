@@ -20,15 +20,16 @@
 
     $fname_cleaned = ucfirst(strtolower(trim($_POST['fname']))); // Strips white space, forces capitalization
     $lname_cleaned = ucfirst(strtolower(trim($_POST['lname'])));
-    $email_cleaned = trim($_POST['email']); // Strips white space
+    $email_cleaned = trim(strtolower($_POST['email'])); // Strips white space and removes capitalization
     $password_cleaned = $_POST['password'];
     $password2_cleaned = $_POST['password2'];
     $key = $_POST['key'];
+    $tf = $_POST['tf'];
 
     $isWorking = True;
 
     // TODO if entries are NOT filled
-    if (empty($_POST['fname']) || empty($_POST['lname']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password2']) || empty($key)) {
+    if (empty($fname_cleaned) || empty($lname_cleaned) || empty($email_cleaned) || empty($password_cleaned) || empty($password2_cleaned) || empty($key) || empty($tf)) {
       $formError = "Please fill out all required fields.";
       $isWorking = False;
     }
@@ -154,10 +155,6 @@
     <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
-    <!--Demo [ DEMONSTRATION ]-->
-    <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
-
-
 
 
     <!--SCRIPT-->
@@ -166,6 +163,12 @@
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
+
+    <!-- Bootstrap Select -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
 
 
 
@@ -226,31 +229,31 @@
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-male"></i></div>
-										<input type="text" class="form-control" placeholder="First name" name="fname">
+										<input type="text" class="form-control" placeholder="First name" name="fname" required>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-user"></i></div>
-										<input type="text" class="form-control" placeholder="Last name" name="lname">
+										<input type="text" class="form-control" placeholder="Last name" name="lname" required>
 									</div>
 								</div>
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                    <input type="text" class="form-control" placeholder="E-mail" name="email">
+                    <input type="text" class="form-control" placeholder="E-mail" name="email" required>
                   </div>
                 </div>
 								<div class="form-group">
 									<div class="input-group">
 										<div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-										<input type="password" class="form-control" placeholder="Password" name="password">
+										<input type="password" class="form-control" placeholder="Password" name="password" required>
 									</div>
 								</div>
                 <div class="form-group">
                   <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-asterisk"></i></div>
-                    <input type="password" class="form-control" placeholder="Confirm password" name="password2">
+                    <input type="password" class="form-control" placeholder="Confirm password" name="password2" required>
                   </div>
                 </div>
 
@@ -262,7 +265,6 @@
                     <input type="password" class="form-control" placeholder="Registration key" name="key">
                   </div>
                 </div>
-
 
                 <div id="error">
                   <p style="color:red;"><?=$formError?></p>
@@ -315,7 +317,6 @@
 
     <!--Nifty Admin [ RECOMMENDED ]-->
     <script src="js/nifty.min.js"></script>
-
 
     <!--Background Image [ DEMONSTRATION ]-->
     <script src="js/demo/bg-images.js"></script>

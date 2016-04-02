@@ -18,6 +18,7 @@
                       <div class="pad-ver">
                         <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture">
                       </div>
+
                       <h4 class="text-lg text-overflow mar-no"><?= $profileData['fname'] . ' ' . $profileData['lname'] ?></h4>
                       <p class="text-sm"><?php
                         if($profileData['is_admin'] == 0){
@@ -30,16 +31,16 @@
                       </p>
                       <div class="pad-ver btn-group">
                         <?php if(isset($profileData['facebook']) && $profileData['facebook'] != '' && ($user['is_admin'] == 1 || $profilePrivacy['facebook'] == 0 || $profileData['id'] == $user['id'])) : ?>
-                              <a title="" href="<?= $profileData['facebook'] ?>" class="btn btn-icon btn-hover-primary fa fa-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
+                              <a target="_blank" title="" href="<?= $profileData['facebook'] ?>" class="btn btn-icon btn-hover-primary fa fa-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
                         <?php endif; ?>
                         <?php if(isset($profileData['twitter']) && $profileData['twitter'] != '' && ($user['is_admin'] == 1 || $profilePrivacy['twitter'] == 0 || $profileData['id'] == $user['id'])) : ?>
-                              <a title="" href="<?= $profileData['twitter'] ?>" class="btn btn-icon btn-hover-info fa fa-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+                              <a target="_blank" title="" href="<?= $profileData['twitter'] ?>" class="btn btn-icon btn-hover-info fa fa-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
                         <?php endif; ?>
                         <?php if(isset($profileData['google']) && $profileData['google'] != '' && ($user['is_admin'] == 1 || $profilePrivacy['google'] == 0 || $profileData['id'] == $user['id'])) : ?>
-                              <a title="" href="<?= $profileData['google'] ?>" class="btn btn-icon btn-hover-danger fa fa-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
+                              <a target="_blank" title="" href="<?= $profileData['google'] ?>" class="btn btn-icon btn-hover-danger fa fa-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
                         <?php endif; ?>
                         <?php if(isset($profileData['linkedin']) && $profileData['linkedin'] != '' && ($user['is_admin'] == 1 || $profilePrivacy['linkedin'] == 0 || $profileData['id'] == $user['id'])) : ?>
-                              <a title="" href="<?= $profileData['linkedin'] ?>" class="btn btn-icon btn-hover-primary fa fa-linkedin icon-lg add-tooltip" data-original-title="LinkedIn" data-container="body"></a>
+                              <a target="_blank" title="" href="<?= $profileData['linkedin'] ?>" class="btn btn-icon btn-hover-primary fa fa-linkedin icon-lg add-tooltip" data-original-title="LinkedIn" data-container="body"></a>
                         <?php endif; ?>
                       </div>
                     </div>
@@ -65,7 +66,7 @@
                       <?php endif; ?>
                       <?php if(isset($profileData['slack']) && $profileData['slack'] != '') : ?>
                         <li class="list-group-item list-item-sm">
-                          <a href="https://cs50xmiami.slack.com/messages/<?=$profileData['slack']?>/"><i class="fa fa-slack fa-fw"></i> <?= $profileData['slack'] ?></a>
+                          <a target="_blank" href="https://cs50xmiami.slack.com/messages/<?=$profileData['slack']?>/"><i class="fa fa-slack fa-fw"></i> <?= $profileData['slack'] ?></a>
                         </li>
                       <?php endif; ?>
                       <!-- <li class="list-group-item list-item-sm">

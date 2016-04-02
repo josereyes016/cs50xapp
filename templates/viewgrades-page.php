@@ -26,23 +26,30 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-
-      <div class="responsive-iframe-container">
-            <iframe src="https://calendar.google.com/calendar/embed?src=cs50xmiami%40gmail.com&ctz=America/New_York" style="border: 0" width="800" height="800" frameborder="0" scrolling="no"></iframe>
-      </div>
-
-      <script type='text/javascript'>
-        $(document).ready(function() {
-            $('#calendar').fullCalendar({
-                googleCalendarApiKey: '63670088644-73hoahjd15tcrtqne5opj0vstghpe1qv.apps.googleusercontent.com',
-                events: {
-                    googleCalendarId: 'cs50xmiami@gmail.com'
-                }
-            });
-        });
-      </script>
-
+      <?php foreach($grades as $grade){?>
+        <div class="col-sm-3 col-xs-12">
+          <div class="panel panel-default">
+          <!-- Panel heading -->
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="panel-heading">
+              <h3 class="panel-title"><?=ucfirst($grade['type']) . ' ' . $grade['number'] . ': ' . $grade['name'] ?></h3>
+            </div>
+            <!-- Panel body -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="panel-body">
+              <!-- Content here -->
+              <div class="col-xs-4">
+                <b>Grade: </b>
+              </div>
+              <div class="col-xs-8">
+                <p><?= $grade['grade'] ?> / <?= $assignments[$grade['name']]['max'] ?></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php ;}?>
     </div>
+
     <!--===================================================-->
     <!--End page content-->
 

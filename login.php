@@ -1,7 +1,7 @@
 <?php
 require ("includes/databaseconnect.php");
 
-$title = 'Log In';
+//$title = 'Log In';
 
 $email = "";
 $password = "";
@@ -11,7 +11,7 @@ $formError = "";
 // If submit button WAS clicked
 if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
   //TODO Clean Vars
-  $email_cleaned = $_POST['email'];
+  $email_cleaned = trim(strtolower($_POST['email']));
   $password_cleaned = $_POST['password'];
   $isWorking = True;
 
@@ -42,6 +42,11 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
         $_SESSION['fname'] = $userInfo["fname"];
         $_SESSION['lname'] = $userInfo["lname"];
         $_SESSION['is_admin'] = $userInfo["is_admin"];
+
+        $cookie_name = "user";
+        $cookie_value = $_SESSION['id'];
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+
         header("location: index.php"); // Redirect to homepage
       }
     }

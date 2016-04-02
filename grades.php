@@ -4,13 +4,84 @@
 // }
 require('includes/databaseconnect.php');
 require('includes/user.php');
+require('includes/assignments.php');
 
 if($_SESSION['id'] == ''){
     header("location:index.php");
 }
 
+if($user['is_admin'] == 0) {
+  header("location:viewgrades.php");
+}
+
 // Set dynamic page title
 $title = 'Grades';
+
+$formError = '';
+$formSuccess = '';
+$gradeError = '';
+$gradeSuccess = '';
+
+$userID = $user['id'];
+
+$studentsQuery = mysqli_query($db, "SELECT *
+                                   FROM `users`
+                                  WHERE `tf`='$userID'");
+$students = [];
+while ($student = $studentsQuery->fetch_assoc()) {
+    $students[] = $student;
+}
+
+if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addStudent'){
+  if ($_POST['email'] == ''){
+    $formError = "Please enter a student's e-mail address.";
+  }
+  else {
+    $studentEmail_cleaned = trim(strtolower($_POST['email']));
+    $studentQuery = mysqli_query($db, "SELECT *
+                                  FROM `users`
+                                 WHERE `email` = '$studentEmail_cleaned'");
+    $studentRows = mysqli_num_rows($studentQuery);
+    if ($studentRows != 1) {
+      $formError = "Invalid e-mail address.";
+    } else {
+      $studentInfo = mysqli_fetch_assoc($studentQuery);
+      if ($studentInfo['is_admin'] == 1){
+        $formError = "User is an administrator.";
+      } else {
+        mysqli_query($db, "UPDATE `users`
+                              SET `tf`='$userID'
+                            WHERE `email`='$studentEmail_cleaned'");
+        $formError = '';
+        $formSuccess = "Student was successfully added.";
+      }
+    }
+  }
+}
+elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addGrade'){
+  $studentID = $_POST['studentID'];
+  $psetName = $_POST['pset'];
+  $psetType = $assignments[$psetName]['type'];
+  $psetNumber = $assignments[$psetName]['number'];
+  $psetGrade = $_POST['grade'];
+
+  $gradeQuery = mysqli_query($db, "SELECT *
+                                     FROM grades
+                                    WHERE id='$studentID'
+                                      AND name='$psetName'");
+  $gradeRows = mysqli_num_rows($gradeQuery);
+  if ($gradeRows == 0) {
+    mysqli_query($db, "INSERT INTO `grades` (`id`, `type`, `number`, `name`, `grade`)
+                            VALUES ('$studentID', '$psetType', '$psetNumber', '$psetName', '$psetGrade')");
+  }
+  elseif ($gradeRows == 1) {
+    mysqli_query($db, "UPDATE grades
+                          SET grade='$psetGrade'
+                        WHERE id='$studentID'
+                          AND name='$psetName'");
+  }
+
+}
 
 // Render templates
 require('templates/head.php');
