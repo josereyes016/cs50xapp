@@ -8,12 +8,12 @@
     <div id="mainnav-shortcut">
       <ul class="list-unstyled">
         <li class="col-xs-6" data-content="QR Code">
-          <a id="demo-toggle-aside" class="shortcut-grid" href="../attendance.php">
+          <a id="demo-toggle-aside" class="shortcut-grid" href="attendance.php">
             <i class="fa fa-qrcode"></i>
           </a>
         </li>
         <li class="col-xs-6" data-content="Notifications">
-          <a id="demo-toggle-aside" class="shortcut-grid" href="../dashboard.php">
+          <a id="demo-toggle-aside" class="shortcut-grid" href="dashboard.php">
             <i class="fa fa-bullhorn"></i>
           </a>
         </li>
@@ -73,7 +73,7 @@
 
             <!--Menu list item-->
             <li>
-              <a href="grades.php">
+              <a href="<?php if($user['is_admin'] == 1){echo 'grades.php';} else {echo 'viewgrades.php';}?>">
                 <i class="fa fa-graduation-cap"></i>
                 <span class="menu-title">
                   <strong>Grades</strong>

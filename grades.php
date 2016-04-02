@@ -10,6 +10,10 @@ if($_SESSION['id'] == ''){
     header("location:index.php");
 }
 
+if($user['is_admin'] == 0) {
+  header("location:viewgrades.php");
+}
+
 // Set dynamic page title
 $title = 'Grades';
 
@@ -54,7 +58,28 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['su
     }
   }
 }
-elseif ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET['uid'])){
+elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addGrade'){
+  $studentID = $_POST['studentID'];
+  $psetName = $_POST['pset'];
+  $psetType = $assignments[$psetName]['type'];
+  $psetNumber = $assignments[$psetName]['number'];
+  $psetGrade = $_POST['grade'];
+
+  $gradeQuery = mysqli_query($db, "SELECT *
+                                     FROM grades
+                                    WHERE id='$studentID'
+                                      AND name='$psetName'");
+  $gradeRows = mysqli_num_rows($gradeQuery);
+  if ($gradeRows == 0) {
+    mysqli_query($db, "INSERT INTO `grades` (`id`, `type`, `number`, `name`, `grade`)
+                            VALUES ('$studentID', '$psetType', '$psetNumber', '$psetName', '$psetGrade')");
+  }
+  elseif ($gradeRows == 1) {
+    mysqli_query($db, "UPDATE grades
+                          SET grade='$psetGrade'
+                        WHERE id='$studentID'
+                          AND name='$psetName'");
+  }
 
 }
 
