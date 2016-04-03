@@ -36,15 +36,11 @@ if (!empty($_FILES)) {
     move_uploaded_file($tempFile,$avatar); //Move uploaded file to destination.
 
     //TODO SQL query to add img name (or path?) to db
+    mysqli_query($db, "UPDATE `profile` SET `avatar_path`='$targetPath' WHERE `id`='$userID'");
+    $user['avatar_path'] = $targetPath;
   }
-=======
-  $targetPath = dirname( __FILE__ ) . $ds . $storeFolder . $ds;  //Create the absolute path of the destination folder.
-  $targetFile =  $targetPath . $_FILES['file']['name'];  //Create the absolute path of the uploaded file destination.
-  move_uploaded_file($tempFile,$targetFile); //Move uploaded file to destination.
 
-  mysqli_query($db, "UPDATE `profile` SET `avatar_path`='$targetPath' WHERE `id`='$userID'");
-  $user['avatar_path'] = $targetPath;
->>>>>>> grades
+
 }
 
 header("location: editprofile.php");
