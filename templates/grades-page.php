@@ -31,7 +31,7 @@
         <div class="col-sm-6">
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h3 class="panel-title">Add Grade</h3>
+              <h3 class="panel-title">Add Grade: <?= $studentName ?> </h3>
             </div>
             <div class="panel-body">
               <div style="color:red;">
@@ -128,11 +128,14 @@
             </div> -->
             <ul class="list-group">
               <?php foreach($students as $student){?>
-                  <a class="list-group-item" href="grades.php?uid=<?=$student['id']?>">
+                <div class="list-group-item">
+                  <a class="col-xs-11" href="grades.php?uid=<?=$student['id']?>">
                     <div>
-                      <?= $student['fname'].' '.$student['lname'] ?>
+                      <div><?= $student['fname'].' '.$student['lname'] ?></div>
                     </div>
                   </a>
+                  <a href="viewgrades.php?uid=<?= $student['id'] ?>"><button class="btn btn-xs btn-default pad-all"> > </button></a>
+                </div>
               <?php ;}?>
             </ul>
           </div>

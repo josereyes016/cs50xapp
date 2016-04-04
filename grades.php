@@ -27,12 +27,32 @@ $userID = $user['id'];
 $studentsQuery = mysqli_query($db, "SELECT *
                                    FROM `users`
                                   WHERE `tf`='$userID'");
-$students = [];
-while ($student = $studentsQuery->fetch_assoc()) {
-    $students[] = $student;
+$studentsRows = mysqli_num_rows($studentsQuery);
+if($studentsRows > 0){
+  $students = [];
+  while ($student = $studentsQuery->fetch_assoc()) {
+      $students[] = $student;
+  }
 }
 
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addStudent'){
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['uid'])) {
+  $uID = $_GET['uid'];
+  $studentQuery = mysqli_query($db, "SELECT *
+                                FROM `users`
+                               WHERE `id` = '$uID'");
+  $studentRows = mysqli_num_rows($studentQuery);
+  if ($studentRows != 1) {
+    $gradeError = "Invalid student ID.";
+  } else {
+    $studentInfo = mysqli_fetch_assoc($studentQuery);
+    if ($studentInfo['is_admin'] == 1){
+      $gradeError = "User is an administrator.";
+    } else {
+      $studentName = $studentInfo['fname'] . ' ' . $studentInfo['lname'];
+    }
+  }
+}
+elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addStudent'){
   if ($_POST['email'] == ''){
     $formError = "Please enter a student's e-mail address.";
   }
@@ -54,6 +74,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['su
                             WHERE `email`='$studentEmail_cleaned'");
         $formError = '';
         $formSuccess = "Student was successfully added.";
+        header("location: grades.php");
       }
     }
   }
@@ -82,6 +103,7 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POS
   }
 
 }
+
 
 // Render templates
 require('templates/head.php');

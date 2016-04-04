@@ -6,9 +6,8 @@
       search for fellow classmates or keep up with news about CS50xMiami.',
     ),
     array(
-      'title' => 'Quiz 0 is Coming Up!',
-      'content' => 'Quiz 0 will be Monday, March 14, during normal lecture hours.
-      Quiz 0 Reviews will be during Section hours on Wednesday, Saturday, and Monday.',
+      'title' => 'Final Projects!',
+      'content' => 'Start thinking about final project ideas. Final project proposals will be here before you know it!',
     ),
     array(
       'title' => "Don't Forget to Customize Your Profile!",

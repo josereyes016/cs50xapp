@@ -13,7 +13,7 @@
           </a>
         </li>
         <li class="col-xs-6" data-content="Notifications">
-          <a id="demo-toggle-aside" class="shortcut-grid" href="dashboard.php">
+          <a id="demo-toggle-aside" class="shortcut-grid" href="logged-in.php">
             <i class="fa fa-bullhorn"></i>
           </a>
         </li>

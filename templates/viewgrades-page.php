@@ -7,7 +7,14 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-      <!-- <h1 class="page-header text-overflow"><?= $title ?></h1> -->
+      <h1 class="page-header text-overflow">
+        <?php if(isset($_GET['uid'])){
+          echo $studentName;
+        }
+        else {
+          echo '';
+        } ?>
+      </h1>
 
       <!--TODO Searchbox-->
       <!-- <div class="searchbox">
