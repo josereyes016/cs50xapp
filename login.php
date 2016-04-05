@@ -210,8 +210,6 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
     <!--Nifty Admin [ RECOMMENDED ]-->
     <script src="js/nifty.min.js"></script>
 
-    <!--Background Image [ DEMONSTRATION ]-->
-    <script src="js/demo/bg-images.js"></script>
 
 </body>
 </html>

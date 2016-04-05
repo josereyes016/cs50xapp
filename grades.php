@@ -86,6 +86,12 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POS
   $psetNumber = $assignments[$psetName]['number'];
   $psetGrade = $_POST['grade'];
 
+  if($psetGrade < 0 || $psetGrade > $assignments[$psetName]['max']){
+    $min = $assignments[$psetName]['min'];
+    $max = $assignments[$psetName]['max'];
+    $gradeError = "Grade range for this pset is between {$min} and {$max}";
+  }
+
   $gradeQuery = mysqli_query($db, "SELECT *
                                      FROM grades
                                     WHERE id='$studentID'

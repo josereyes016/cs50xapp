@@ -12,6 +12,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased !important;
 }
+p {
+  font-size:14px;
+}
 h1,
 .h1 {
   font-size: 34px;

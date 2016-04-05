@@ -24,12 +24,11 @@
     $password_cleaned = $_POST['password'];
     $password2_cleaned = $_POST['password2'];
     $key = $_POST['key'];
-    $tf = $_POST['tf'];
 
     $isWorking = True;
 
     // TODO if entries are NOT filled
-    if (empty($fname_cleaned) || empty($lname_cleaned) || empty($email_cleaned) || empty($password_cleaned) || empty($password2_cleaned) || empty($key) || empty($tf)) {
+    if (empty($fname_cleaned) || empty($lname_cleaned) || empty($email_cleaned) || empty($password_cleaned) || empty($password2_cleaned) || empty($key)) {
       $formError = "Please fill out all required fields.";
       $isWorking = False;
     }
@@ -155,6 +154,10 @@
     <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
+
+
 
 
     <!--SCRIPT-->
@@ -163,37 +166,6 @@
     <!--Page Load Progress Bar [ OPTIONAL ]-->
     <link href="plugins/pace/pace.min.css" rel="stylesheet">
     <script src="plugins/pace/pace.min.js"></script>
-
-    <!-- Bootstrap Select -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-
-
-
-	<!--
-
-	REQUIRED
-	You must include this in your project.
-
-	RECOMMENDED
-	This category must be included but you may modify which plugins or components which should be included in your project.
-
-	OPTIONAL
-	Optional plugins. You may choose whether to include it in your project or not.
-
-	DEMONSTRATION
-	This is to be removed, used for demonstration purposes only. This category must not be included in your project.
-
-	SAMPLE
-	Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
-
-
-	Detailed information and more samples can be found in the document.
-
-	-->
-
 
 </head>
 
@@ -300,49 +272,22 @@
 
 
 
-    <!--JAVASCRIPT-->
-    <!--=================================================-->
+  <!--JAVASCRIPT-->
+  <!--=================================================-->
 
-    <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery-2.1.1.min.js"></script>
+  <!--jQuery [ REQUIRED ]-->
+  <script src="js/jquery-2.1.1.min.js"></script>
 
+  <!--BootstrapJS [ RECOMMENDED ]-->
+  <script src="js/bootstrap.min.js"></script>
 
-    <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="js/bootstrap.min.js"></script>
+  <!--Fast Click [ OPTIONAL ]-->
+  <script src="plugins/fast-click/fastclick.min.js"></script>
 
-
-    <!--Fast Click [ OPTIONAL ]-->
-    <script src="plugins/fast-click/fastclick.min.js"></script>
-
-
-    <!--Nifty Admin [ RECOMMENDED ]-->
-    <script src="js/nifty.min.js"></script>
-
-    <!--Background Image [ DEMONSTRATION ]-->
-    <script src="js/demo/bg-images.js"></script>
+  <!--Nifty Admin [ RECOMMENDED ]-->
+  <script src="js/nifty.min.js"></script>
 
 
-	<!--
-
-	REQUIRED
-	You must include this in your project.
-
-	RECOMMENDED
-	This category must be included but you may modify which plugins or components which should be included in your project.
-
-	OPTIONAL
-	Optional plugins. You may choose whether to include it in your project or not.
-
-	DEMONSTRATION
-	This is to be removed, used for demonstration purposes only. This category must not be included in your project.
-
-	SAMPLE
-	Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
-
-
-	Detailed information and more samples can be found in the document.
-
-	-->
 
 
 </body>

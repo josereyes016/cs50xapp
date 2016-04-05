@@ -22,6 +22,8 @@ while ($student = $studentsQuery->fetch_assoc()) {
     $students[] = $student;
 }
 
+
+
 //$admins = mysqli_fetch_all($adminsQuery, MYSQLI_ASSOC);
 //$students = mysqli_fetch_all($studentsQuery, MYSQLI_ASSOC);
 

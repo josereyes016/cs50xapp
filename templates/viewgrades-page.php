@@ -7,7 +7,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-      <h1 class="page-header text-overflow">
+      <h1 class="page-title text-overflow">
         <?php if(isset($_GET['uid'])){
           echo $studentName;
         }
@@ -33,28 +33,129 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <?php foreach($grades as $grade){?>
-        <div class="col-sm-3 col-xs-12">
-          <div class="panel panel-default">
-          <!-- Panel heading -->
-          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="panel-heading">
-              <h3 class="panel-title"><?=ucfirst($grade['type']) . ' ' . $grade['number'] . ': ' . $grade['name'] ?></h3>
-            </div>
-            <!-- Panel body -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="panel-body">
-              <!-- Content here -->
-              <div class="col-xs-4">
-                <b>Grade: </b>
-              </div>
-              <div class="col-xs-8">
-                <p><?= $grade['grade'] ?> / <?= $assignments[$grade['name']]['max'] ?></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      <?php ;}?>
+      <hr>
+
+        <?php if(sizeof($pset0) > 0) : ?>
+          <h3 class="page-header">Problem Set 0</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset0 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset1) > 0) : ?>
+          <h3 class="page-header">Problem Set 1</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset1 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset2) > 0) : ?>
+          <h3 class="page-header">Problem Set 2</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset2 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset3) > 0) : ?>
+          <h3 class="page-header">Problem Set 3</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset3 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset4) > 0) : ?>
+          <h3 class="page-header">Problem Set 4</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset4 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset5) > 0) : ?>
+          <h3 class="page-header">Problem Set 5</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset5 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset6) > 0) : ?>
+          <h3 class="page-header">Problem Set 6</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset6 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset7) > 0) : ?>
+          <h3 class="page-header">Problem Set 7</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset7 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($pset8) > 0) : ?>
+          <h3 class="page-header">Problem Set 8</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($pset8 as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($quizzes) > 0) : ?>
+          <h3 class="page-header">Quizzes</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($quizzes as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
+        <?php if(sizeof($project) > 0) : ?>
+          <h3 class="page-header">Project</h3>
+        <?php endif;?>
+      <div class="row">
+        <?php
+        foreach($project as $grade){
+          gradePanel($grade);
+        }
+        ?>
+      </div>
+
     </div>
 
     <!--===================================================-->
