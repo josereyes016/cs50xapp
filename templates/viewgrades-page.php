@@ -4,12 +4,12 @@
   <!--===================================================-->
   <div id="content-container">
 
-    <!--Page Title-->
+    <<!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
       <h1 class="page-title text-overflow">
-        <?php if(isset($_GET['uid'])){
-          echo $studentName;
+        <?php if(isset($_GET['uid']) && $user['is_admin'] == 1){
+          echo $studentName . "<hr>";
         }
         else {
           echo '';

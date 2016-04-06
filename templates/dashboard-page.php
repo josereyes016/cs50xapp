@@ -44,37 +44,30 @@
 									<!--Indicators-->
 									<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 									<ol class="carousel-indicators dark out">
-										<li class="active" data-slide-to="0" data-target="#carousel"></li>
-										<li data-slide-to="1" data-target="#carousel" class=""></li>
-										<li class="" data-slide-to="2" data-target="#carousel"></li>
+                    <?php
+                      $a = 0;
+                      foreach ($announcements as $announcement){
+                      ?>
+    										<li class="<?php if ($a == 0){echo 'active';}?>" data-slide-to="<?=$a?>" data-target="#carousel"></li>
+                      <?php $a++; }?>
 									</ol>
 									<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 									<div class="carousel-inner text-center">
 
 										<!--Item 1-->
-										<div class="item active">
-											<h3><?= $announcements[0]['title'] ?></h3>
-                      <div class="col-xs-8 col-xs-offset-2">
-                        <p><?= $announcements[0]['content'] ?></p>
-                      </div>
-										</div>
+                    <?php
+                    $b = 0;
+                    foreach ($announcements as $announcement){
+                    ?>
+  										<div class="item <?php if ($b == 0){echo 'active';}?>">
+  											<h3><?= $announcement['title'] ?></h3>
+                        <div class="col-xs-8 col-xs-offset-2">
+                          <p><?= $announcement['content'] ?></p>
+                        </div>
+  										</div>
+                    <?php $b++; }?>
 
-										<!--Item 2-->
-										<div class="item">
-											<h3><?= $announcements[1]['title'] ?></h3>
-                      <div class="col-xs-8 col-xs-offset-2">
-  											<p><?= $announcements[1]['content'] ?></p>
-                      </div>
-										</div>
-
-										<!--Item 3-->
-										<div class="item">
-											<h3><?= $announcements[2]['title'] ?></h3>
-                      <div class="col-xs-8 col-xs-offset-2">
-                        <p><?= $announcements[2]['content'] ?></p>
-                      </div>
-										</div>
 									</div>
 
 									<!--carousel-control-->
@@ -82,6 +75,7 @@
 									<a class="carousel-control left" data-slide="prev" href="#carousel"><i class="fa fa-chevron-left fa-2x"></i></a>
 									<a class="carousel-control right" data-slide="next" href="#carousel"><i class="fa fa-chevron-right fa-2x"></i></a>
 									<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 
 								</div>
           </div>
