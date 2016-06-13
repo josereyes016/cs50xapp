@@ -26,7 +26,7 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <div class="panel col-sm-4">
+      <div class="panel col-sm-5 col-md-4 col-xs-12">
 	      <div class="panel-body">
           <div class="mar-hor">
             <img src="<?= $filePath ?>">
