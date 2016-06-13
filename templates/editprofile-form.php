@@ -34,11 +34,20 @@
             <div class="panel-body">
               <div class="text-center pad-all">
                 <div class="pad-ver">
-                  <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture">
+                  <!-- TODO <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture"> -->
                 </div>
                 <h4 class="text-lg text-overflow mar-no"><?= $_SESSION['fname'] . ' ' . $_SESSION['lname'] ?></h4>
+                <p class="text-sm"><?php
+                  if($_SESSION['is_admin'] == 0){
+                    echo 'Student';
+                  }
+                  elseif($_SESSION['is_admin'] == 1){
+                    echo 'Teaching Fellow';
+                  }
+                  ?>
+                </p>
                 <br/>
-                <form action="upload.php" class="dropzone"></form>
+                <!-- TODO <form action="upload.php" class="dropzone"></form> -->
               </div>
             </div>
           </div>

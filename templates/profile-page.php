@@ -16,7 +16,7 @@
                   <div class="panel-body">
                     <div class="text-center pad-all">
                       <div class="pad-ver">
-                        <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture">
+                        <!-- TODO <img src="img/av1.png" class="img-xl img-border img-circle" alt="Profile Picture"> -->
                       </div>
 
                       <h4 class="text-lg text-overflow mar-no"><?= $profileData['fname'] . ' ' . $profileData['lname'] ?></h4>
@@ -24,9 +24,13 @@
                         if($profileData['is_admin'] == 0){
                           echo 'Student';
                         }
-                        elseif($profileData['is_admin'] == 1){
+                        elseif($profileData['id'] == 1) {
+                          echo 'Instructor';
+                        }
+                        elseif($profileData['id'] > 1){
                           echo 'Teaching Fellow';
                         }
+
                         ?>
                       </p>
                       <div class="pad-ver btn-group">

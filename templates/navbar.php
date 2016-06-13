@@ -18,10 +18,10 @@
 				<!--Brand logo & name-->
 				<!--================================-->
 				<div class="navbar-header">
-					<a href="index.php" class="navbar-brand">
+					<a href="index.php" class="navbar-brand text-center">
 						<img src="img/CS50xMiami_Logo.png" alt="CS50xMiami Logo" class="img-circle brand-icon">
 						<div class="brand-title">
-							<span class="brand-text">CS50xMiami</span>
+							<span class="brand-text" style="font-family:Courier;font-weight:lighter;margin-left:10px;">App50</span>
 						</div>
 					</a>
 				</div>
@@ -52,7 +52,7 @@
 						<li id="dropdown-user" class="dropdown">
 							<a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
 								<span class="pull-right">
-									<img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture">
+									<!-- TODO <img class="img-circle img-user media-object" src="img/av1.png" alt="Profile Picture"> -->
 								</span>
 								<div class="username">
 									<?php
@@ -83,11 +83,11 @@
 											<i class="fa fa-gear fa-fw fa-lg"></i> Settings
 										</a>
 									</li>
-									<li>
+									<!-- <li>
 										<a href="#">
 											<i class="fa fa-question-circle fa-fw fa-lg"></i> Help
 										</a>
-									</li>
+									</li> -->
 								</ul>
 								<!-- Dropdown footer -->
 								<div class="pad-all text-center">
