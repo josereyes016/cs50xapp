@@ -4,7 +4,6 @@
 // }
 require('includes/databaseconnect.php');
 require('includes/user.php');
-require('includes/announcements.php');
 
 if($_SESSION['id'] == ''){
     header("location:index.php");
@@ -12,6 +11,19 @@ if($_SESSION['id'] == ''){
 
 // Set dynamic page title
 $title = 'Dashboard';
+
+// Fetch announcements
+$announcementsQuery = mysqli_query($db, "SELECT *
+                              FROM `announcements`
+                              WHERE 1");
+
+$announcementRows = mysqli_num_rows($announcementsQuery);
+if($announcementRows > 0){
+  $announcements = [];
+  while ($announcement = $announcementsQuery->fetch_assoc()) {
+      $announcements[] = $announcement;
+  }
+}
 
 // Render templates
 require('templates/head.php');

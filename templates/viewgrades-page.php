@@ -4,7 +4,7 @@
   <!--===================================================-->
   <div id="content-container">
 
-    <<!--Page Title-->
+    <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
       <h1 class="page-title text-overflow">
@@ -33,7 +33,6 @@
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
-      <hr>
 
         <?php if(sizeof($pset0) > 0) : ?>
           <h3 class="page-header">Problem Set 0</h3>

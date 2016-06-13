@@ -33,7 +33,14 @@
         <!-- Panel heading -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
           <div class="panel-heading">
-            <h3 class="panel-title">Announcements</h3>
+            <h3 class="panel-title">
+              Announcements
+              <?php if($user['is_admin'] == 1) : ?>
+              <div class="pull-right">
+              <a href="editannouncements.php"><button class="btn btn-mint">Edit</button></a>
+              </div>
+              <?php endif;?>
+            </h3>
           </div>
           <!-- Panel body -->
           <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -47,9 +54,9 @@
                     <?php
                       $a = 0;
                       foreach ($announcements as $announcement){
-                      ?>
+                    ?>
     										<li class="<?php if ($a == 0){echo 'active';}?>" data-slide-to="<?=$a?>" data-target="#carousel"></li>
-                      <?php $a++; }?>
+                    <?php $a++; }?>
 									</ol>
 									<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
@@ -111,7 +118,7 @@
           <div class="panel-body">
             <!-- Content here -->
             <div class="container">
-              <div class="fb-page" data-href="https://www.facebook.com/CS50xMIAMI-871833776233275/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="false"></div>
+              <div class="fb-page" style="margin-left:0px;" data-href="https://www.facebook.com/CS50xMIAMI-871833776233275/?ref=br_rs" data-tabs="timeline,events" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
             </div>
           </div>
         </div>

@@ -43,9 +43,9 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
         $_SESSION['lname'] = $userInfo["lname"];
         $_SESSION['is_admin'] = $userInfo["is_admin"];
 
-        $cookie_name = "user";
-        $cookie_value = $_SESSION['id'];
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+        // $cookie_name = "user";
+        // $cookie_value = $_SESSION['id'];
+        // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 
         header("location: index.php"); // Redirect to homepage
       }
