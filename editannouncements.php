@@ -55,36 +55,48 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['aid']) && $_GET['m']
                             WHERE `id`='$announcementID'");
         $announcementError = '';
         $announcementSuccess = "Announcement was successfully deleted.";
+        header("location:editannouncements.php");
     }
 
 }
 
 // Adding or Editing Announcements
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'editAnnouncement'){
-  $announcementID = $_POST['announcementID'];
-  $title = $_POST['title'];
-  $content = $_POST['content'];
+  if ($_POST['announcementID'] !== '') {
+    $announcementID = $_POST['announcementID'];
+    $aTitle = $_POST['title'];
+    $content = $_POST['content'];
 
-  $announcementQuery = mysqli_query($db, "SELECT *
-                                     FROM announcements
-                                    WHERE id='$announcementID'");
-  $announcementRows = mysqli_num_rows($announcementQuery);
-  if ($announcementRows == 0) {
+    $announcementQuery = mysqli_query($db, "SELECT *
+                                       FROM announcements
+                                      WHERE id='$announcementID'");
+    $announcementRows = mysqli_num_rows($announcementQuery);
+    if ($announcementRows == 1) {
+      mysqli_query($db, "UPDATE `announcements`
+                            SET `title`='$aTitle',
+                                `content`='$content'
+                          WHERE `id`='$announcementID'");
+
+      $announcementError = '';
+      $announcementSuccess = "Announcement was successfully updated.";
+      header("location:editannouncements.php");
+    } else {
+      $announcementError = "Could not update announcement.";
+      $announcementSuccess = '';
+    }
+  }
+  else {
+    $aTitle = $_POST['title'];
+    $content = $_POST['content'];
+
     mysqli_query($db, "INSERT INTO `announcements` (`title`,`content`)
-                            VALUES ('$title', '$content')");
+                            VALUES ('$aTitle', '$content')");
 
     $announcementError = '';
     $announcementSuccess = "Announcement was successfully added.";
+    header("location:editannouncements.php.php");
   }
-  elseif ($announcementRows == 1) {
-    mysqli_query($db, "UPDATE `announcements`
-                          SET `title`='$title',
-                              `content`='$content'
-                        WHERE `id`='$announcementID'");
 
-    $announcementError = '';
-    $announcementSuccess = "Announcement was successfully updated.";
-  }
 }
 
 

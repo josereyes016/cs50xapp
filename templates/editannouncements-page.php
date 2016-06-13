@@ -56,13 +56,13 @@
                         <div class="input-group col-sm-12">
                           <label class="col-sm-3 control-label" for="announcementID">Announcement ID: </label>
                           <div class="col-sm-9">
-                            <input type="text" name="announcementID" <?php if (isset($announcementInfo)){ echo 'value="' . $announcementInfo['id']. '"'; }?> required>
+                            <input type="text" name="announcementID" <?php if (isset($announcementInfo)){ echo 'value="' . $announcementInfo['id']. '"'; }?> >
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
                         <div class="input-group col-sm-12">
-                          <label class="col-sm-3 control-label" for="pset-selector">Announcement Title: </label>
+                          <label class="col-sm-3 control-label" for="pset-selector">Title: </label>
                           <div class="col-sm-9">
                             <input type="text" name="title" <?php if (isset($announcementInfo)){ echo 'value="' . $announcementInfo['title']. '"'; }?> required>
                           </div>
@@ -110,14 +110,12 @@
               <ul class="list-group">
                 <?php foreach($announcements as $announcement){?>
                   <div class="list-group-item" style="height:150px;">
-                    <a class="col-xs-11" href="grades.php?uid=<?=$announcement['title']?>">
                       <div>
                         <div><b><?= $announcement['title'] ?></b></div>
                       </div>
                       <div>
                         <div><?= $announcement['content'] ?></div>
                       </div>
-                    </a>
                     <a href="editannouncements.php?aid=<?= $announcement['id'] ?>&m=e"><button class="btn btn-xs btn-warning pad-all" style="margin:5px;"> Edit </button></a>
                     <a href="editannouncements.php?aid=<?= $announcement['id'] ?>&m=d"><button class="btn btn-xs btn-danger pad-all"> Delete </button></a>
                   </div>
