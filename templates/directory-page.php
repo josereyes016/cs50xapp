@@ -28,26 +28,52 @@
     <div id="page-content">
 
       <div class="col-sm-6 col-xs-12">
-        <div class="panel panel-info">
-        <!-- Panel heading -->
-        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-          <div class="panel-heading">
-            <h3 class="panel-title">Administrators</h3>
-          </div>
-          <!-- Panel body -->
+        <!-- Instructors Panel -->
+        <div class="col-sm-6 col-xs-12">
+          <div class="panel panel-default">
+          <!-- Panel heading -->
           <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-          <!-- <div class="panel-body">
-              <p>Teachers and administrators</p>
-          </div> -->
-          <ul class="list-group">
-            <?php foreach($admins as $admin){?>
-                <a class="list-group-item" href="profile.php?uid=<?=$admin['id']?>">
-                  <div>
-                    <?= $admin['fname'].' '.$admin['lname'] ?>
-                  </div>
-                </a>
-            <?php ;}?>
-          </ul>
+            <div class="panel-heading">
+              <h3 class="panel-title">Instructor</h3>
+            </div>
+            <!-- Panel body -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- <div class="panel-body">
+                <p>Teachers and administrators</p>
+            </div> -->
+            <ul class="list-group">
+              <a class="list-group-item" href="profile.php?uid=<?=$admins[0]['id']?>">
+                <div>
+                  <?= $admins[0]['fname'].' '.$admins[0]['lname'] ?>
+                </div>
+              </a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xs-12">
+          <div class="panel panel-info">
+          <!-- Panel heading -->
+          <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="panel-heading">
+              <h3 class="panel-title">Teaching Fellows</h3>
+            </div>
+            <!-- Panel body -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- <div class="panel-body">
+                <p>Teachers and administrators</p>
+            </div> -->
+            <ul class="list-group">
+              <?php foreach($admins as $admin){
+                  if($admin['id'] > 1){?>
+                  <a class="list-group-item" href="profile.php?uid=<?=$admin['id']?>">
+                    <div>
+                      <?= $admin['fname'].' '.$admin['lname'] ?>
+                    </div>
+                  </a>
+              <?php ;} ;}?>
+            </ul>
+          </div>
         </div>
       </div>
 
