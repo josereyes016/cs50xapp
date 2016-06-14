@@ -108,6 +108,18 @@
   					</div>
       			</form>
               </div>
+              <div class="row">
+                <form action="grades.php" method="post" id="addStudents">
+      				<div class="form-group">
+                    	<div class="col-xs-9">
+                      		<div class="input-group">
+        						<textarea wrap='soft' class="form-control" name="emails" placeholder="Student E-mails"></textarea>
+        	      			</div>
+                    	</div>
+		    			<button class="btn btn-info text-uppercase col-xs-3" type="submit" name="submit" value="addStudents" style="font-size:16px; padding:3px;">+</button>
+  					</div>
+      			</form>
+              </div>
             </div>
           </div>
         </div>
