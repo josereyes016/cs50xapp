@@ -42,6 +42,7 @@ if (!empty($_POST["submit"]) && $_POST["submit"] == "submit") {
         $_SESSION['fname'] = $userInfo["fname"];
         $_SESSION['lname'] = $userInfo["lname"];
         $_SESSION['is_admin'] = $userInfo["is_admin"];
+        $_SESSION['tf'] = $userInfo["tf"];
 
         // $cookie_name = "user";
         // $cookie_value = $_SESSION['id'];

@@ -18,7 +18,7 @@
 				<!--Brand logo & name-->
 				<!--================================-->
 				<div class="navbar-header">
-					<a href="index.php" class="navbar-brand text-center">
+					<a href="index.php" class="navbar-brand">
 						<img src="img/CS50xMiami_Logo.png" alt="CS50xMiami Logo" class="img-circle brand-icon">
 						<div class="brand-title">
 							<span class="brand-text" style="font-family:Courier;font-weight:lighter;margin-left:10px;">App50</span>

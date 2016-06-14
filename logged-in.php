@@ -5,6 +5,13 @@
 require('includes/databaseconnect.php');
 require('includes/user.php');
 
+$sections = [
+  'Marlise' => 'Saturday Afternoon, 12pm-2pm',
+  'Dylan'   => 'Saturday Morning, 9am-11am',
+  'Daniel'  => 'Monday Afternoon, 12pm-2pm',
+  'Jose'    => 'Wednesday Afternoon, 12pm-2pm',
+];
+
 if($_SESSION['id'] == ''){
     header("location:index.php");
 }
@@ -23,6 +30,16 @@ if($announcementRows > 0){
   while ($announcement = $announcementsQuery->fetch_assoc()) {
       $announcements[] = $announcement;
   }
+}
+
+$tf = $_SESSION['tf'];
+if ($_SESSION['tf'] != NULL) {
+  $tfQuery = mysqli_query($db, "SELECT `fname`, `lname`
+                                FROM `users`
+                                WHERE `id`=$tf");
+  $tfInfo =mysqli_fetch_assoc($tfQuery);
+
+  $section = $sections[$tfInfo['fname']];
 }
 
 // Render templates

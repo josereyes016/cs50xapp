@@ -27,6 +27,26 @@
     <!--===================================================-->
     <div id="page-content">
 
+      <?php if($_SESSION['tf'] != NULL) : ?>
+        <!-- Teaching Fellow Panel -->
+        <div class="panel panel-colorful panel-default" id="tf">
+  				<!--Panel heading-->
+  				<div class="panel-heading">
+  					<div class="panel-control">
+  						<button class="btn btn-default" data-target="#panel-collapse-default" data-toggle="collapse"><i class="fa fa-chevron-down"></i></button>
+  						<!-- <button class="btn btn-default" data-dismiss="panel"><i class="fa fa-times"></i></button> -->
+  					</div>
+  					<h3 class="panel-title">Your Teaching Fellow Is: <b><?= $tfInfo['fname'] ?></b>.</h3>
+  				</div>
+  				<!--Panel body-->
+  				<div id="panel-collapse-default" class="collapse in">
+  					<div class="panel-body">
+  						<p>Your Teaching Fellow is <?= $tfInfo['fname'] ?>.<br /> Your section is on <?= $section ?>.</p>
+  					</div>
+  				</div>
+  			</div>
+      <?php endif; ?>
+
 
       <div class="col-sm-12 col-xs-12">
         <div class="panel panel-mint">
