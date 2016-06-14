@@ -81,6 +81,9 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POS
 }
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addStudents'){
     
+    $errorReport = 'These emails could not be processed ';
+    $errorCount = 0;
+    
     if (strlen($_POST['emails']) < 0) {
         $formError = "Please add emails";
     }
@@ -88,10 +91,19 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POS
         $studentEmails = str_getcsv($_POST['emails']);
         
         foreach ($studentEmails as $email) {
-            add_tf_to_student($db, $email, $userID, $formError, $formSuccess);
+            $result = add_tf_to_student($db, $email, $userID);
+            if($result){
+                $errorReport += "$email "
+                $errorCount += 1;
+            }
         }
     }
     
+    if($erroCount > 0){
+        $formError = $errorReport;
+    } else {
+        $formSuccess = "All emails were added!";
+    }
 }
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addGrade'){
   $studentID = $_POST['studentID'];
