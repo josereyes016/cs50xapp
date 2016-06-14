@@ -79,6 +79,20 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POS
     }
   }
 }
+elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addStudents'){
+    
+    if (strlen($_POST['emails']) < 0) {
+        $formError = "Please add emails";
+    }
+    else {
+        $studentEmails = str_getcsv($_POST['emails']);
+        
+        foreach ($studentEmails as $email) {
+            add_tf_to_student($db, $email, $userID, $formError, $formSuccess);
+        }
+    }
+    
+}
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']) && $_POST['submit'] == 'addGrade'){
   $studentID = $_POST['studentID'];
   $psetName = $_POST['pset'];
