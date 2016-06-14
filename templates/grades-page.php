@@ -98,15 +98,15 @@
               </div>
               <div class="row">
                 <form action="grades.php" method="post" id="addStudent">
-      						<div class="form-group">
-                    <div class="col-xs-9">
-                      <div class="input-group">
-        								<input type="email" class="form-control" name="email" placeholder="Student E-mail">
-        							</div>
-                    </div>
-								    <button class="btn btn-info text-uppercase col-xs-3" type="submit" name="submit" value="addStudent" style="font-size:16px; padding:3px;">+</button>
-  								</div>
-      					</form>
+      				<div class="form-group">
+                    	<div class="col-xs-9">
+                      		<div class="input-group">
+        						<input type="email" class="form-control" name="email" placeholder="Student E-mail">
+        	      			</div>
+                    	</div>
+		    			<button class="btn btn-info text-uppercase col-xs-3" type="submit" name="submit" value="addStudent" style="font-size:16px; padding:3px;">+</button>
+  					</div>
+      			</form>
               </div>
             </div>
           </div>
